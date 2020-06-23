@@ -24,12 +24,14 @@ public class Join {
 	private JLabel btn_apply;
 	private JLabel btn_DoubleCheck;
 	Image[] list = new Image[4];
-	
+	static String path = System.getProperty("user.dir") +"\\src\\image\\";
 	public static void main(String[] args) {
+		System.out.println(path);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Join window = new Join();
+					
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -98,8 +100,8 @@ public class Join {
 		txt_address.setBorder(null);
 		
 		btn_apply = new JLabel("");
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\회원등록2.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\회원등록1.png").getImage();
+		list[2] = new ImageIcon(path+"회원등록2.png").getImage();
+		list[3] = new ImageIcon(path+"회원등록1.png").getImage();
 
 		btn_apply.addMouseListener(new MouseAdapter() {
 			@Override
@@ -131,8 +133,8 @@ public class Join {
 		panel.add(btn_apply);
 		
 		btn_DoubleCheck = new JLabel("");
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\중복확인1.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\중복확인2.png").getImage();
+		list[0] = new ImageIcon(path+"중복확인1.png").getImage();
+		list[1] = new ImageIcon(path+"중복확인2.png").getImage();
 
 		btn_DoubleCheck.addMouseListener(new MouseAdapter() {
 			@Override
@@ -150,8 +152,8 @@ public class Join {
 		btn_DoubleCheck.setBounds(516, 126, 57, 35);
 		panel.add(btn_DoubleCheck);
 		
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\02 회원가입.png";
-		Image image = new ImageIcon(path).getImage();
+		
+		Image image = new ImageIcon(path + "02 회원가입.png").getImage();
 		panel.setLayout(null);
 		
 		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));
