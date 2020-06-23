@@ -7,6 +7,8 @@ public class practice1 {
 		System.out.println("sdfsdfsdfasdfsdasdfaasdfsadff");
 		String path = System.getProperty("user.dir");
 		path+="\\src\\";
+		
+		
 	}
 
 }

@@ -11,9 +11,9 @@ import java.sql.Connection;
 public class Connect {
 	static Connection conn;
 	static PreparedStatement pst;
-	static ArrayList<VO> arr;
-
-	public ArrayList<String> select(VO vo,String sql, String id, String pw) {
+	static ArrayList<String> arr = new ArrayList<String>();
+	
+	public ArrayList<String> select(String sql, String id, String pw, int cnt) {
 		try {
 			pst = prepared(sql, id, pw);
 
@@ -23,10 +23,14 @@ public class Connect {
 			// select : executeQuery(). 리턴 : 검색된 데이터.
 
 			while (rs.next()) { // .next : 데이터가 있으면 True, 없으면 False반환
-				//arr.add(rs.get)
-
+				// arr.add(rs.get)
+				for (int i = 1; i <= cnt; i++) {
+					String a = rs.getString(i);
+					System.out.println(a);
+					arr.add(a);
+				}
 			}
-
+			return arr;
 		} catch (Exception e) {
 
 			e.printStackTrace();

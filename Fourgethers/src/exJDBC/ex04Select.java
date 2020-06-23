@@ -27,8 +27,7 @@ public class ex04Select {
 
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 
-			String sql
-			= "select * from member";
+			String sql = "select * from member";
 
 
 			pst = conn.prepareStatement(sql);
