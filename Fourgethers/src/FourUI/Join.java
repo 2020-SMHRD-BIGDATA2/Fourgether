@@ -26,7 +26,7 @@ public class Join {
 	private JLabel btn_DoubleCheck;
 	Image[] list = new Image[4];
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
-	private ResisterDAO dao = new ResisterDAO();
+	private DAO dao = new DAO();
 
 	public static void main(String[] args) {
 		System.out.println(path);
@@ -135,7 +135,6 @@ public class Join {
 					Login.main(null);
 				} else {
 					JOptionPane.showMessageDialog(null, "가입실패!", "회원가입", JOptionPane.INFORMATION_MESSAGE);
-
 				}
 
 			}

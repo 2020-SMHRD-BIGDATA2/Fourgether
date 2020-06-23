@@ -25,6 +25,7 @@ public class MemberInformation {
 	private JTextField txt_address;
 	private JLabel lbl_Level;
 	Image[] list = new Image[5];
+	static String path = System.getProperty("user.dir") + "\\src\\";
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -57,8 +58,8 @@ public class MemberInformation {
 		frame.getContentPane().add(panel);
 
 		JLabel btn_login = new JLabel("");
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\수정확인2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\수정확인1.png").getImage();
+		list[0] = new ImageIcon(path+"image\\수정확인2.png").getImage();
+		list[1] = new ImageIcon(path+"image\\수정확인1.png").getImage();
 
 		btn_login.addMouseListener(new MouseAdapter() {
 			@Override
@@ -129,9 +130,9 @@ public class MemberInformation {
 		
 		lbl_Level = new JLabel("");
 		// 등급 라벨 3 - 브론즈 / 2 - 실버 / 1 - 골드  횟수에따라 보여주는 이미지 다름
-		Image list1 = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal3.png").getImage();
-		Image list2 = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal2.png").getImage();
-		Image list3 = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal1.png").getImage();
+		Image list1 = new ImageIcon(path+"image\\medal3.png").getImage();
+		Image list2 = new ImageIcon("image\\medal2.png").getImage();
+		Image list3 = new ImageIcon("image\\medal1.png").getImage();
 		Image image1 = list3;   // 회원 등급에 따라 list 번호 상이
 		lbl_Level = new JLabel(new ImageIcon(image1.getScaledInstance(45, 45, Image.SCALE_SMOOTH)));
 		
@@ -142,7 +143,7 @@ public class MemberInformation {
 		lbl_Level.setBounds(507, 79, 57, 45);
 		panel.add(lbl_Level);
 		
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\04 회원정보.png";
+		String path = "image\\04 회원정보.png";
 		Image image = new ImageIcon(path).getImage();
 		panel.setLayout(null);
 

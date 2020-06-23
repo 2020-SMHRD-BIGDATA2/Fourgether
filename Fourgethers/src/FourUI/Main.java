@@ -14,9 +14,14 @@ public class Main {
 
 	private JFrame frame;
 	Image[] list = new Image[8];
-
-	
-	public static void main(String[] args) {
+	static String path = System.getProperty("user.dir") + "\\src\\";
+	static UserVO vo;
+	static DAO dao = new DAO();
+	public static void main(UserVO vow) {
+		vo = vow;
+		int cnt=dao.logCheck(vo);
+		System.out.println("성공 !!" + cnt);
+		System.out.println(vo.getId() +" //" + vo.getPw());
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -55,8 +60,8 @@ public class Main {
 			}
 		});
 		btn_MemberInfo_modify.setBounds(129, 156, 123, 143);
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\회원정보확인및수정아이콘2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\회원정보확인및수정아이콘1.png").getImage();
+		list[0] = new ImageIcon(path+"image\\회원정보확인및수정아이콘2.png").getImage();
+		list[1] = new ImageIcon(path+"image\\회원정보확인및수정아이콘1.png").getImage();
 
 		btn_MemberInfo_modify.addMouseListener(new MouseAdapter() {
 			@Override
@@ -82,8 +87,8 @@ public class Main {
 			}
 		});
 		btn_ReservationCheck.setBounds(381, 156, 154, 143);
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\달력2.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\달력1.png").getImage();
+		list[2] = new ImageIcon(path+"image\\달력2.png").getImage();
+		list[3] = new ImageIcon(path+"image\\달력1.png").getImage();
 
 		btn_ReservationCheck.addMouseListener(new MouseAdapter() {
 			@Override
@@ -102,8 +107,8 @@ public class Main {
 		
 		
 		JLabel btn_Search = new JLabel("");
-		list[4] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\검색2.png").getImage();
-		list[5] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\검색1.png").getImage();
+		list[4] = new ImageIcon(path+"image\\검색2.png").getImage();
+		list[5] = new ImageIcon(path+"image\\검색1.png").getImage();
 
 		btn_Search.addMouseListener(new MouseAdapter() {
 			@Override
@@ -129,8 +134,8 @@ public class Main {
 		panel.add(btn_Search);
 		
 		JLabel btn_logOut = new JLabel("");
-		list[6] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\로그아웃2.png").getImage();
-		list[7] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\로그아웃1.png").getImage();
+		list[6] = new ImageIcon(path+"image\\로그아웃2.png").getImage();
+		list[7] = new ImageIcon(path+"image\\로그아웃1.png").getImage();
 
 		btn_logOut.addMouseListener(new MouseAdapter() {
 			@Override
@@ -155,8 +160,8 @@ public class Main {
 		btn_logOut.setBounds(748, 0, 101, 26);
 		panel.add(btn_logOut);
 		
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\03 메인페이지.png";
-		Image image = new ImageIcon(path).getImage();
+		
+		Image image = new ImageIcon(path+"image\\03 메인페이지.png").getImage();
 		panel.setLayout(null);
 
 		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));

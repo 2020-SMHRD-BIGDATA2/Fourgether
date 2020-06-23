@@ -6,10 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ResisterDAO {
+public class DAO {
 	private ResultSet rs;
 	private Connection conn;
 	private PreparedStatement psmt;
+	
 
 	// DB 연결 메소드
 	private void getConnection() {
@@ -28,6 +29,8 @@ public class ResisterDAO {
 		} catch (ClassNotFoundException e) {
 
 			e.printStackTrace();
+		}finally {
+			System.out.println("conn 성공");
 		}
 
 	}
@@ -58,7 +61,6 @@ public class ResisterDAO {
 		int cnt = 0;
 
 		getConnection();
-
 		try {
 			String sql = "INSERT INTO USERS VALUES(?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
@@ -68,6 +70,7 @@ public class ResisterDAO {
 			psmt.setInt(4, vo.getPv_num());
 			psmt.setString(5, vo.getPh_num());
 			psmt.setString(6, vo.getAddr());
+			System.out.println("prep 성공");
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 
@@ -108,7 +111,7 @@ public class ResisterDAO {
 	}
 
 	// 로그인 성공/실패
-	public int logCheck(ResisterVO vo) {
+	public int logCheck(UserVO vo) {
 		int cnt = 0;
 		getConnection();
 
