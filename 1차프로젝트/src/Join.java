@@ -125,7 +125,7 @@ public class Join {
 				ResisterVO vo = new ResisterVO(id,pw,name,pv_num,ph_num,addr);
 				int rst = dao.resister(vo);
 				String msg = dao.check(rst);
-				JOptionPane.showMessageDialog(null, msg,"성공여부", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, msg,"회원가입", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		btn_apply.addMouseListener(new MouseAdapter() {

@@ -10,9 +10,6 @@ public class ResisterDAO {
 	public int resister(ResisterVO vo) {
 		
 		
-		if () {
-			
-		}
 	}
 	
 	public String check(int chk) {

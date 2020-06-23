@@ -6,7 +6,7 @@ public class ResisterVO {
 	private int pv_num;
 	private String ph_num;
 	private String addr;
-
+	
 	public ResisterVO(String id, String pw, String name, int pv_num, String ph_num, String addr) {
 		this.id = id;
 		this.pw = pw;
