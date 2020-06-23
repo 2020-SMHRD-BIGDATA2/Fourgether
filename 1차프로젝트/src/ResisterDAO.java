@@ -141,35 +141,41 @@ public class ResisterDAO {
 
 	}
 
+	// 회원정보창에 회원정보 표출
+	public int updateId(ResisterVO vo) {
+		
+		return 0;
+
+		
+	}
+
 	// 회원정보수정
-	
+
 	public int update(ResisterVO vo) {
 
-	      int cnt = 0;
-	      
-	      getConnection();
-	      try {
-	         String sql = "update users set  pw= ?, name= ?, pv_num = ?, ph_num = ? ,addr = ? where id = ?";
-	         psmt = conn.prepareStatement(sql);
+		int cnt = 0;
 
-	         psmt.setString(1, vo.getPw());
-	         psmt.setString(2, vo.getName());
-	         psmt.setInt(3, vo.getPv_num());
-	         psmt.setString(4, vo.getPh_num());
-	         psmt.setString(5, vo.getAddr());
+		getConnection();
 
-	         
-	         cnt = psmt.executeUpdate();
+		try {
+			String sql = "update users set  pw= ?, name= ?, pv_num = ?, ph_num = ? ,addr = ? where id = ?";
+			psmt = conn.prepareStatement(sql);
 
-	      } catch (SQLException e) {
-	         e.printStackTrace();
-	      }finally {
-	         close();
-	      }
-	      
-	      
-	      return cnt;
-	   }
-	
+			psmt.setString(1, vo.getPw());
+			psmt.setString(2, vo.getName());
+			psmt.setInt(3, vo.getPv_num());
+			psmt.setString(4, vo.getPh_num());
+			psmt.setString(5, vo.getAddr());
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
 
 }
