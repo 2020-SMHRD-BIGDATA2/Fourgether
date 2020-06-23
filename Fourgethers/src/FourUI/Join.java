@@ -24,7 +24,7 @@ public class Join {
 	private JLabel btn_apply;
 	private JLabel btn_DoubleCheck;
 	Image[] list = new Image[4];
-	static String path = System.getProperty("user.dir") +"\\src\\FourUI\\image\\";
+	static String path = System.getProperty("user.dir") +"\\src\\image\\";
 	public static void main(String[] args) {
 		System.out.println(path);
 		EventQueue.invokeLater(new Runnable() {
