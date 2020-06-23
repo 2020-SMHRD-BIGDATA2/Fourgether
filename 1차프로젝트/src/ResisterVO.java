@@ -15,6 +15,17 @@ public class ResisterVO {
 		this.ph_num = ph_num;
 		this.addr = addr;
 	}
+	
+	public ResisterVO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+		
+	}
+	
+	
+	public ResisterVO(String id) {
+		this.id = id;
+	}
 
 	public String getId() {
 		return id;

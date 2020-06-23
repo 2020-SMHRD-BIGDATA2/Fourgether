@@ -24,6 +24,7 @@ public class MemberInformation {
 	private JTextField txt_address;
 	private JLabel lbl_Level;
 	Image[] list = new Image[5];
+	ResisterDAO dao = new ResisterDAO();
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

@@ -4,6 +4,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
 import javax.swing.JTextField;
@@ -23,6 +24,7 @@ public class Login {
 	private JTextField txt_id;
 	private JPasswordField txt_pw;
 	Image[] list = new Image[6];
+	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -52,8 +54,7 @@ public class Login {
 		panel.setBounds(0, 0, 875, 513);
 		frame.getContentPane().add(panel);
 
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\01 로그인.png";
-		Image image = new ImageIcon(path).getImage();
+		Image image = new ImageIcon(path + "01 로그인.png").getImage();
 		panel.setLayout(null);
 
 		txt_id = new JTextField();
@@ -73,8 +74,8 @@ public class Login {
 
 		JLabel btn_Join = new JLabel(" ");
 		btn_Join.setHorizontalAlignment(SwingConstants.CENTER);
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\회원가입2.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\회원가입.png").getImage();
+		list[2] = new ImageIcon(path + "회원가입2.png").getImage();
+		list[3] = new ImageIcon(path + "회원가입.png").getImage();
 
 		btn_Join.addMouseListener(new MouseAdapter() {
 			@Override
@@ -98,12 +99,11 @@ public class Login {
 		});
 		btn_Join.setBounds(235, 444, 166, 59);
 		panel.add(btn_Join);
-		
 
 		JLabel btn_nonMember = new JLabel(" ");
 		btn_nonMember.setHorizontalAlignment(SwingConstants.CENTER);
-		list[4] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\비회원로그인버튼2.png").getImage();
-		list[5] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\비회원로그인버튼.png").getImage();
+		list[4] = new ImageIcon(path + "비회원로그인버튼2.png").getImage();
+		list[5] = new ImageIcon(path + "비회원로그인버튼.png").getImage();
 
 		btn_nonMember.addMouseListener(new MouseAdapter() {
 			@Override
@@ -128,20 +128,16 @@ public class Login {
 		btn_nonMember.setBounds(477, 453, 159, 45);
 		panel.add(btn_nonMember);
 
-		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));
+		JLabel lbl_image = new JLabel(new ImageIcon(Login.class.getResource("/image/01 \uB85C\uADF8\uC778.PNG")));
 		lbl_image.setBounds(0, 0, 875, 513);
 		lbl_image.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-
-			}
 
 		});
 
 		JLabel btn_login = new JLabel(" ");
-		
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\btn_Entered.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\btn_Exited.png").getImage();
+
+		list[0] = new ImageIcon(path + "btn_Entered.png").getImage();
+		list[1] = new ImageIcon(path + "btn_Exited.png").getImage();
 
 		btn_login.addMouseListener(new MouseAdapter() {
 			@Override
@@ -155,36 +151,25 @@ public class Login {
 				btn_login.setIcon(new ImageIcon(list[1]));
 
 			}
-		});
-		btn_login.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\btn_Entered.png";
-				Image image = new ImageIcon(path).getImage();
-
-			}
 
 			@Override
-			public void mouseExited(MouseEvent e) {
-				String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\btn_Exited.png";
-				Image image = new ImageIcon(path).getImage();
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mouseClicked(MouseEvent arg0) {
 				String id = txt_id.getText();
 				String pw = txt_pw.getText();
-				// System.out.println("아이디 : " + id + "패스워드 : " + pw);
-				// 로그인 누르고 비워줘야함
-				txt_id.setText("");
-				txt_pw.setText("");
-
-				// 버튼 누르면 메인페이지로
-				frame.dispose();
-				Main.main(null);
-
+				ResisterDAO dao = new ResisterDAO();
+				ResisterVO vo = new ResisterVO(id, pw);
+				int cnt = dao.logCheck(vo);
+				if (cnt >0) {
+					JOptionPane.showMessageDialog(null, "환영해요!", "로그인성공", JOptionPane.INFORMATION_MESSAGE);
+					frame.dispose();
+					Main.main(null);
+				}else {
+					JOptionPane.showMessageDialog(null, "아이디,비밀번호를 확인하세요.", "로그인실패", JOptionPane.INFORMATION_MESSAGE);
+		
+				}
+				
+				
 			}
-
 		});
 
 		btn_login.setBounds(409, 328, 85, 84);

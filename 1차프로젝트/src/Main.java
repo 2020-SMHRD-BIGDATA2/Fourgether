@@ -10,12 +10,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Main {
-
+	static String path = System.getProperty("user.dir") +"\\src\\image\\";
 	private JFrame frame;
 	Image[] list = new Image[8];
 
 	
 	public static void main(String[] args) {
+		System.out.println(path);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
