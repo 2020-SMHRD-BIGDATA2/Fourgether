@@ -3,11 +3,11 @@ public class ResisterVO {
 	private String id;
 	private String pw;
 	private String name;
-	private String pv_num;
+	private int pv_num;
 	private String ph_num;
 	private String addr;
 
-	public ResisterVO(String id, String pw, String name, String pv_num, String ph_num, String addr) {
+	public ResisterVO(String id, String pw, String name, int pv_num, String ph_num, String addr) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -40,11 +40,11 @@ public class ResisterVO {
 		this.name = name;
 	}
 
-	public String getPv_num() {
+	public int getPv_num() {
 		return pv_num;
 	}
 
-	public void setPv_num(String pv_num) {
+	public void setPv_num(int pv_num) {
 		this.pv_num = pv_num;
 	}
 

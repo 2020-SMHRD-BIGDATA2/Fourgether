@@ -23,6 +23,7 @@ public class Join {
 	private JLabel btn_apply;
 	private JLabel btn_DoubleCheck;
 	Image[] list = new Image[4];
+	private ResisterDAO dao = new ResisterDAO();
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -114,7 +115,17 @@ public class Join {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "가입 축하드려요!","가입성공", JOptionPane.INFORMATION_MESSAGE);
+				
+				String id = txt_id.getText();
+				String pw = txt_pw.getText();
+				String name = txt_name.getText();
+				int pv_num = Integer.parseInt(txt_idNumber.getText());
+				String ph_num = txt_phonenumber.getText();
+				String addr = txt_address.getText();
+				ResisterVO vo = new ResisterVO(id,pw,name,pv_num,ph_num,addr);
+				int rst = dao.resister(vo);
+				String msg = dao.check(rst);
+				JOptionPane.showMessageDialog(null, msg,"성공여부", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		btn_apply.addMouseListener(new MouseAdapter() {
