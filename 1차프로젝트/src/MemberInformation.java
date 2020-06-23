@@ -72,6 +72,11 @@ public class MemberInformation {
 				btn_login.setIcon(new ImageIcon(list[1]));
 
 			}
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				
+			}
 		});
 		btn_login.addMouseListener(new MouseAdapter() {
 			@Override
@@ -89,6 +94,7 @@ public class MemberInformation {
 		txt_id.setBorder(null);
 		txt_id.setBounds(347, 128, 222, 33);
 		panel.add(txt_id);
+		
 		
 		txt_pw = new JTextField();
 		txt_pw.setOpaque(false);
@@ -124,7 +130,6 @@ public class MemberInformation {
 		txt_address.setBorder(null);
 		txt_address.setBounds(347, 404, 222, 33);
 		panel.add(txt_address);
-		
 		
 		
 		lbl_Level = new JLabel("");

@@ -156,22 +156,7 @@ public class Login {
 				btn_login.setIcon(new ImageIcon(list[1]));
 
 			}
-		});
-		btn_login.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\btn_Entered.png";
-				Image image = new ImageIcon(path).getImage();
-
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\btn_Exited.png";
-				Image image = new ImageIcon(path).getImage();
-			}
-
-			@Override
+	
 			public void mouseClicked(MouseEvent e) {
 				String id = txt_id.getText();
 				String pw = txt_pw.getText();
