@@ -21,7 +21,7 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 
-public class Search {
+public class Search2 {
 	JComboBox cbx_sigungu;
 	private JFrame frame;
 	private JTextField txt_Search;
@@ -33,7 +33,7 @@ public class Search {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Search window = new Search();
+					Search2 window = new Search2();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,13 +42,11 @@ public class Search {
 		});
 	}
 
-	public Search() {
+	public Search2() {
 		initialize();
 	}
 
 	private void initialize() {
-		
-		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 899, 552);

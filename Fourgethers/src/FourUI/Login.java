@@ -5,6 +5,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
 import javax.swing.JTextField;
@@ -23,6 +24,7 @@ public class Login {
 	private JFrame frame;
 	private JTextField txt_id;
 	private JPasswordField txt_pw;
+	DAO dao2 = new DAO();
 	LoginDAO dao = new LoginDAO();
 	
 	
@@ -160,22 +162,25 @@ public class Login {
 			}
 	
 			public void mouseClicked(MouseEvent e) {
-				int cnt;
+				
 				String id = txt_id.getText();
 				String pw = txt_pw.getText();
-				// System.out.println("아이디 : " + id + "패스워드 : " + pw);
-				// 로그인 누르고 비워줘야함
-				txt_id.setText("");
-				txt_pw.setText("");
+				LoginVO vo = new LoginVO(id, pw);
 				
-				LoginVO vow = new LoginVO(id,pw);
-				cnt = dao.logCheck(vow);
-				System.out.println(cnt);
-				// 버튼 누르면 메인페이지로
-				frame.dispose();
-				Main.main(vow);
-
+				int cnt = dao.logCheck(vo);
+				if (cnt >0) {
+					JOptionPane.showMessageDialog(null, "환영해요!", "로그인성공", JOptionPane.INFORMATION_MESSAGE);
+					frame.dispose();
+					Main.main(null);
+				}else {
+					JOptionPane.showMessageDialog(null, "아이디,비밀번호를 확인하세요.", "로그인실패", JOptionPane.INFORMATION_MESSAGE);
+		
+				}
+				
+				
 			}
+
+			
 
 			
 

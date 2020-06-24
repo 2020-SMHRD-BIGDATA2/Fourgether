@@ -172,7 +172,7 @@ public class ReservationHistory {
 		panel.add(btn_right3);
 		
 		JLabel btn_goMain = new JLabel("");
-		btn_goMain.setBounds(723, 19, 128, 29);
+		btn_goMain.setBounds(733, 12, 134, 40);
 		list[4] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\메인으로2.png").getImage();
 		list[5] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\메인으로1.png").getImage();
 
@@ -281,63 +281,53 @@ public class ReservationHistory {
 		
 		JLabel lbl_3_1 = new JLabel("");
 		lbl_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_1.setBounds(39, 288, 107, 18);
+		lbl_3_1.setBounds(39, 288, 124, 18);
 		panel.add(lbl_3_1);
 		
 		JLabel lbl_3_2 = new JLabel("");
 		lbl_3_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_2.setBounds(175, 288, 107, 18);
+		lbl_3_2.setBounds(192, 288, 128, 18);
 		panel.add(lbl_3_2);
 		
 		JLabel lbl_3_3 = new JLabel("");
 		lbl_3_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_3.setBounds(315, 288, 107, 18);
+		lbl_3_3.setBounds(371, 288, 107, 18);
 		panel.add(lbl_3_3);
 		
 		JLabel lbl_3_4 = new JLabel("");
 		lbl_3_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_4.setBounds(447, 288, 107, 18);
+		lbl_3_4.setBounds(539, 288, 107, 18);
 		panel.add(lbl_3_4);
 		
 		JLabel lbl_3_5 = new JLabel("");
 		lbl_3_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_5.setBounds(585, 288, 107, 18);
+		lbl_3_5.setBounds(698, 288, 107, 18);
 		panel.add(lbl_3_5);
-		
-		JLabel lbl_3_6 = new JLabel("");
-		lbl_3_6.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_6.setBounds(716, 288, 107, 18);
-		panel.add(lbl_3_6);
 		
 		JLabel lbl_4_1 = new JLabel("");
 		lbl_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_1.setBounds(39, 318, 107, 18);
+		lbl_4_1.setBounds(39, 320, 124, 18);
 		panel.add(lbl_4_1);
 		
 		JLabel lbl_4_2 = new JLabel("");
 		lbl_4_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_2.setBounds(175, 320, 107, 18);
+		lbl_4_2.setBounds(192, 316, 128, 22);
 		panel.add(lbl_4_2);
 		
 		JLabel lbl_4_3 = new JLabel("");
 		lbl_4_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_3.setBounds(315, 316, 107, 18);
+		lbl_4_3.setBounds(371, 316, 107, 18);
 		panel.add(lbl_4_3);
 		
 		JLabel lbl_4_4 = new JLabel("");
 		lbl_4_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_4.setBounds(447, 316, 107, 18);
+		lbl_4_4.setBounds(539, 316, 107, 18);
 		panel.add(lbl_4_4);
 		
 		JLabel lbl_4_5 = new JLabel("");
 		lbl_4_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_5.setBounds(585, 316, 107, 18);
+		lbl_4_5.setBounds(698, 316, 107, 18);
 		panel.add(lbl_4_5);
-		
-		JLabel lbl_4_6 = new JLabel("");
-		lbl_4_6.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_6.setBounds(716, 316, 107, 18);
-		panel.add(lbl_4_6);
 		
 		JLabel lbl_5_1 = new JLabel("");
 		lbl_5_1.setHorizontalAlignment(SwingConstants.CENTER);

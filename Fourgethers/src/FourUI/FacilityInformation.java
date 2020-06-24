@@ -24,6 +24,7 @@ public class FacilityInformation {
 	private JTextField txt_PhoneNumber;
 	private JTextField txt_Email;
 	Image[] list = new Image[8];
+	static FacilityInformationDAO ww = new FacilityInformationDAO();
 
 	public static void main(String[] args) {
 		
@@ -48,6 +49,7 @@ public class FacilityInformation {
 
 	
 	private void initialize() {
+		//System.out.println(ww.fcvo.getName());
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 893, 570);

@@ -22,8 +22,10 @@ public class Pay {
 	private JFrame frame;
 	private JTextField txt_cardNumber;
 	private JPasswordField txt_pw;
-	Image[] list = new Image[2];
+	Image[] list = new Image[5];
 	private JLabel lbl_level_1;
+	MedalDAO Medal_dao = new MedalDAO();
+	Image[] medal = new Image[4];
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -68,10 +70,13 @@ public class Pay {
 		txt_cardNumber.setColumns(10);
 		
 		JLabel lbl_level = new JLabel(new ImageIcon(""));
-		Image list1 = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal3.png").getImage();
-		Image list2 = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal2.png").getImage();
-		Image list3 = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal1.png").getImage();
-		Image image1 = list3;   // 회원 등급에 따라 list 번호 상이
+		medal[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal3.png").getImage();
+		medal[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal2.png").getImage();
+		medal[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal1.png").getImage();
+		
+		int cnt = (int) Medal_dao.medal(2);  // dao.medal(count)   >> count - 월 별 이용 횟수
+		Image image1 = medal[cnt];   
+		
 		lbl_level_1 = new JLabel(new ImageIcon(image1.getScaledInstance(45, 45, Image.SCALE_SMOOTH)));
 		lbl_level_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		lbl_level_1.setBounds(287, 272, 57, 48);

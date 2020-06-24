@@ -24,7 +24,10 @@ public class MemberInformation {
 	private JTextField txt_phoneNumber;
 	private JTextField txt_address;
 	private JLabel lbl_Level;
-	Image[] list = new Image[5];
+	Image[] list = new Image[3];
+	Image[] medal = new Image[4];
+	MedalDAO Medal_dao = new MedalDAO();
+	
 	static String path = System.getProperty("user.dir") + "\\src\\";
 
 	public static void main(String[] args) {
@@ -130,11 +133,15 @@ public class MemberInformation {
 		
 		lbl_Level = new JLabel("");
 		// 등급 라벨 3 - 브론즈 / 2 - 실버 / 1 - 골드  횟수에따라 보여주는 이미지 다름
-		Image list1 = new ImageIcon(path+"image\\medal3.png").getImage();
-		Image list2 = new ImageIcon("image\\medal2.png").getImage();
-		Image list3 = new ImageIcon("image\\medal1.png").getImage();
-		Image image1 = list3;   // 회원 등급에 따라 list 번호 상이
+		medal[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal3.png").getImage();
+		medal[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal2.png").getImage();
+		medal[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal1.png").getImage();
+		
+		int cnt = (int) Medal_dao.medal(5);  // dao.medal(count)   >> count - 월 별 이용 횟수
+		Image image1 = medal[cnt];   
+		
 		lbl_Level = new JLabel(new ImageIcon(image1.getScaledInstance(45, 45, Image.SCALE_SMOOTH)));
+		
 		
 	
 		lbl_Level.setForeground(Color.WHITE);
