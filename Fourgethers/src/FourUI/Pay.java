@@ -30,6 +30,7 @@ public class Pay {
 	int[] dct = {0,0,5,10};
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 	UserVO vo = new UserVO();
+	static FacilityInformationDAO dao = new FacilityInformationDAO();
 	int cnt = 1;
 	static FacilityInformationDAO ww = new FacilityInformationDAO();
 	
@@ -139,7 +140,7 @@ public class Pay {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JOptionPane.showMessageDialog(null, "결제가 완료 되었습니다.", "결제완료", JOptionPane.INFORMATION_MESSAGE);
-
+				//ResFcVO resvo = new ResFcVO(4, week_num, day_num, day_time, day_month, fc_code, user_id)
 				frame.dispose();
 				ReservationHistory.main(null);
 			}

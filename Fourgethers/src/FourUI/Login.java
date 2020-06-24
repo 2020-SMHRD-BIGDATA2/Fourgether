@@ -18,6 +18,7 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
+import javax.swing.Icon;
 
 public class Login {
 
@@ -58,7 +59,7 @@ public class Login {
 		panel.setBounds(0, 0, 875, 513);
 		frame.getContentPane().add(panel);
 
-		Image image = new ImageIcon(path+"01 로그인.png").getImage();
+		Image image = new ImageIcon(path+"01-1 로그인.png").getImage();
 		panel.setLayout(null);
 
 		txt_id = new JTextField();
@@ -132,8 +133,9 @@ public class Login {
 		});
 		btn_nonMember.setBounds(477, 453, 159, 45);
 		panel.add(btn_nonMember);
-
-		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));
+		
+		JLabel lbl_image = new JLabel("");
+		
 		lbl_image.setBounds(0, 0, 875, 513);
 		lbl_image.addMouseListener(new MouseAdapter() {
 			@Override
@@ -182,7 +184,7 @@ public class Login {
 			
 
 		});
-
+		
 		btn_login.setBounds(409, 328, 85, 84);
 		panel.add(btn_login);
 		panel.add(lbl_image);
