@@ -4,9 +4,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class LoginVO extends UserVO {
-	LoginVO(String txt_id, String txt_pw){
-		this.id = txt_id;
-		this.pw = txt_pw;
+	
+	LoginVO(String id, String pw){
+		super(id,pw);
 	}
+	
+	LoginVO(String id, String pw, String name, int pv_num, String ph_num, String addr) {
+		super(id, pw, name, pv_num, ph_num, addr);
+	}
+	
 	
 }

@@ -171,6 +171,7 @@ public class Join {
 			public void mouseClicked(MouseEvent e) {
 				
 				String id = txt_id.getText();
+				String pw = txt_pw.getText();
 				ResisterVO vo = new ResisterVO(id);
 				int cnt = dao.idCheck(vo);
 				if (cnt > 0) {
