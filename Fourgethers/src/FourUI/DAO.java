@@ -83,7 +83,7 @@ public class DAO {
 	}
 
 	// 아이디 중복 확인
-	public int idCheck(ResisterVO vo) {
+	public int idCheck(UserVO vo) {
 		int cnt = 0;
 		getConnection();
 		String userid = vo.getId();

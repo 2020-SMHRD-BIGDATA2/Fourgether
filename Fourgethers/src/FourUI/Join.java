@@ -171,8 +171,7 @@ public class Join {
 			public void mouseClicked(MouseEvent e) {
 				
 				String id = txt_id.getText();
-				String pw = txt_pw.getText();
-				ResisterVO vo = new ResisterVO(id);
+				UserVO vo = new UserVO(id);
 				int cnt = dao.idCheck(vo);
 				if (cnt > 0) {
 					JOptionPane.showMessageDialog(null, "다행이에요! 중복된 아이디가없어요!", "중복확인", JOptionPane.INFORMATION_MESSAGE);

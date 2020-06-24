@@ -31,6 +31,13 @@ public class UserVO {
 		this.addr = addr;
 	}
 
+	public UserVO(String id) {
+		// TODO Auto-generated constructor stub
+		this.id = id;
+	}
+
+
+
 	public String getId() {
 		return id;
 	}
