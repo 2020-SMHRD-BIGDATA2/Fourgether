@@ -1,26 +1,28 @@
 package FourUI;
 
 public class UserVO {
-	private String id;
-	private String pw;
-	private String name;
-	private int pv_num;
-	private String ph_num;
-	private String addr;
+	static String id;
+	static String pw;
+	static String name;
+	static int pv_num;
+	static String ph_num;
+	static String addr;
+	static int cnt = 100;
 	static String path = System.getProperty("user.dir") + "\\src\\";
 
 	public void logOut() {
 		System.out.println("·Î±×¾Æ¿ô");
 	}
-	
-	
+
+	UserVO() {
+		
+	}
 
 	public UserVO(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
+		
 	}
-
-
 
 	UserVO(String id, String pw, String name, int pv_num, String ph_num, String addr) {
 		this.id = id;
@@ -35,8 +37,6 @@ public class UserVO {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -93,7 +93,5 @@ public class UserVO {
 	public static void setPath(String path) {
 		UserVO.path = path;
 	}
-	
-	
 
 }

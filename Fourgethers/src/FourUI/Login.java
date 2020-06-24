@@ -26,10 +26,10 @@ public class Login {
 	private JPasswordField txt_pw;
 	DAO dao2 = new DAO();
 	LoginDAO dao = new LoginDAO();
-	
-	
 	Image[] list = new Image[6];
 	static String path = System.getProperty("user.dir") + "\\src\\";
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -174,10 +174,7 @@ public class Login {
 					Main.main(null);
 				}else {
 					JOptionPane.showMessageDialog(null, "아이디,비밀번호를 확인하세요.", "로그인실패", JOptionPane.INFORMATION_MESSAGE);
-		
 				}
-				
-				
 			}
 
 			

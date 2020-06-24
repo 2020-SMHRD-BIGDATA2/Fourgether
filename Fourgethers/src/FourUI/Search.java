@@ -48,7 +48,6 @@ public class Search {
 
 	private void initialize() {
 		
-		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 899, 552);
@@ -90,10 +89,11 @@ public class Search {
 				if (txt_Search.getText() == null) {
 					System.out.println("");
 				}
-				search_dao.key_search(txt_Search.getText());
+				ArrayList<FCVO> result = search_dao.key_search(txt_Search.getText());
+				search_dao.print(result);
 				frame.dispose();
 				SearchResult.main(null);
-
+				
 			}
 		});
 

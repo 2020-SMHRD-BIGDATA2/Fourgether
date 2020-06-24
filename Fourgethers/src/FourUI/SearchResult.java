@@ -76,7 +76,7 @@ public class SearchResult {
 			frame.setBounds(100, 100, 900, 620);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.getContentPane().setLayout(null);
-
+			
 			JPanel panel = new JPanel();
 			panel.setBackground(Color.WHITE);
 			panel.setForeground(Color.WHITE);

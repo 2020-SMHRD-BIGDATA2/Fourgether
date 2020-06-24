@@ -169,7 +169,6 @@ public class Join {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
 				String id = txt_id.getText();
 				UserVO vo = new UserVO(id);
 				int cnt = dao.idCheck(vo);
@@ -178,7 +177,6 @@ public class Join {
 				} else {
 					JOptionPane.showMessageDialog(null, "중복된 아이디가 있어요 ㅠㅠ", "중복확인", JOptionPane.INFORMATION_MESSAGE);
 				}
-
 			}
 		});
 				

@@ -91,10 +91,11 @@ public class SearchDAO extends DAO {
 		getConnection();
 
 		try {
-			String sql = " select * from FC where name LIKE ? ";
+			String sql = "select * from FC where name LIKE ? ";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "%" + str + "%");
 			rs = psmt.executeQuery();
+			fc_arr = null;
 			fc_arr = new ArrayList<FCVO>();
 
 			if (rs.next() == true) {
@@ -143,7 +144,7 @@ public class SearchDAO extends DAO {
 		getConnection();
 
 		try {
-			String sql = " SELECT * from FC where name LIKE ? AND ";
+			String sql = "SELECT * from FC where name LIKE ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "%" + sido + "%");
 			rs = psmt.executeQuery();

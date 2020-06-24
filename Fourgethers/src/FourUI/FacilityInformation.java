@@ -18,17 +18,15 @@ public class FacilityInformation {
 
 	private JFrame frame;
 	private JTextField txt_Count;
-	private JTextField txt_Min;
-	private JTextField txt_Max;
 	private JTextField txt_Id;
 	private JTextField txt_PhoneNumber;
-	private JTextField txt_Email;
 	Image[] list = new Image[8];
 	static FacilityInformationDAO ww = new FacilityInformationDAO();
-
+	static LoginDAO lg = new LoginDAO();
+	static UserVO uv = new UserVO();
+	
+	
 	public static void main(String[] args) {
-		
-		
 	
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,10 +44,14 @@ public class FacilityInformation {
 	public FacilityInformation() {
 		initialize();
 	}
-
+	
+	
+	
+	
 	
 	private void initialize() {
-		//System.out.println(ww.fcvo.getName());
+		System.out.println(ww.fcvo.getName());
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 893, 570);
@@ -68,29 +70,19 @@ public class FacilityInformation {
 		panel.add(txt_Count);
 		txt_Count.setOpaque(false);
 		txt_Count.setBorder(null);
-		
-		txt_Min = new JTextField();
-		txt_Min.setHorizontalAlignment(SwingConstants.CENTER);
-		txt_Min.setColumns(10);
-		txt_Min.setBounds(604, 184, 27, 21);
-		panel.add(txt_Min);
-		txt_Min.setOpaque(false);
-		txt_Min.setBorder(null);
-		
-		txt_Max = new JTextField();
-		txt_Max.setHorizontalAlignment(SwingConstants.CENTER);
-		txt_Max.setColumns(10);
-		txt_Max.setBounds(667, 184, 27, 21);
-		panel.add(txt_Max);
-		txt_Max.setOpaque(false);
-		txt_Max.setBorder(null);
-		
+		txt_Count.setText(0+"");
 		txt_Id = new JTextField();
 		txt_Id.setColumns(10);
 		txt_Id.setBounds(699, 301, 153, 21);
 		panel.add(txt_Id);
 		txt_Id.setOpaque(false);
 		txt_Id.setBorder(null);
+		boolean a = true;
+		if(uv.id == null ) {
+			txt_Id.setText("");
+		}else {
+			txt_Id.setText(uv.getId());
+		}
 		
 		txt_PhoneNumber = new JTextField();
 		txt_PhoneNumber.setColumns(10);
@@ -98,21 +90,19 @@ public class FacilityInformation {
 		panel.add(txt_PhoneNumber);
 		txt_PhoneNumber.setOpaque(false);
 		txt_PhoneNumber.setBorder(null);
+		if(uv.ph_num == null ) {
+			txt_PhoneNumber.setText("");
+		}else {
+			txt_PhoneNumber.setText(uv.ph_num);
+		}
 		
-		txt_Email = new JTextField();
-		txt_Email.setColumns(10);
-		txt_Email.setBounds(699, 400, 153, 24);
-		panel.add(txt_Email);
-		txt_Email.setOpaque(false);
-		txt_Email.setBorder(null);
 		
-		JCheckBox checkbox_MyInfo = new JCheckBox("");
-		checkbox_MyInfo.setBackground(Color.WHITE);
-		checkbox_MyInfo.setBounds(699, 256, 32, 39);
-		panel.add(checkbox_MyInfo);
+		
 		
 		JLabel lbl_FacilityName = new JLabel("");
 		lbl_FacilityName.setBounds(130, 90, 224, 30);
+		lbl_FacilityName.setText(ww.fcvo.getName());
+		
 		panel.add(lbl_FacilityName);
 		
 		JLabel btn_goFacilityInfo = new JLabel("");
@@ -181,38 +171,50 @@ public class FacilityInformation {
 		JLabel lbl_FacilityType = new JLabel("");
 		lbl_FacilityType.setBounds(129, 131, 224, 30);
 		panel.add(lbl_FacilityType);
+		lbl_FacilityType.setText(ww.fcvo.getType());
+		
+		
+		
 		
 		JLabel lbl_Address = new JLabel("");
 		lbl_Address.setBounds(130, 172, 224, 30);
 		panel.add(lbl_Address);
+		lbl_Address.setText(ww.fcvo.getAddr_new());
 		
 		JLabel lbl_Managing = new JLabel("");
 		lbl_Managing.setBounds(130, 215, 224, 30);
 		panel.add(lbl_Managing);
+		lbl_Managing.setText(ww.fcvo.getAr_name());
 		
 		JLabel lbl_Department = new JLabel("");
 		lbl_Department.setBounds(130, 256, 224, 30);
 		panel.add(lbl_Department);
+		lbl_Department.setText(ww.fcvo.getDp_name());
 		
 		JLabel lbl_Homepage = new JLabel("");
 		lbl_Homepage.setBounds(130, 304, 224, 30);
 		panel.add(lbl_Homepage);
+		lbl_Homepage.setText(ww.fcvo.getHome_url());
 		
 		JLabel lbl_PhoneNumber = new JLabel("");
 		lbl_PhoneNumber.setBounds(130, 343, 224, 30);
 		panel.add(lbl_PhoneNumber);
+		lbl_PhoneNumber.setText(ww.fcvo.getPh_num());
 		
 		JLabel lbl_AvaliableCount = new JLabel("");
 		lbl_AvaliableCount.setBounds(130, 391, 224, 24);
 		panel.add(lbl_AvaliableCount);
+		lbl_AvaliableCount.setText(ww.fcvo.getSum_people());
 		
 		JLabel lbl_SubFacility = new JLabel("");
 		lbl_SubFacility.setBounds(130, 435, 224, 24);
 		panel.add(lbl_SubFacility);
 		
+		
 		JLabel lbl_Fee = new JLabel("");
 		lbl_Fee.setBounds(130, 480, 224, 24);
 		panel.add(lbl_Fee);
+		lbl_Fee.setText(ww.fcvo.getFee_yn());
 		
 		JLabel btn_Plus = new JLabel("");
 		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\플러스1.png").getImage();
@@ -229,6 +231,12 @@ public class FacilityInformation {
 			public void mouseExited(MouseEvent e) {
 				btn_Plus.setIcon(new ImageIcon(list[3]));
 
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txt_Count.setText(Integer.parseInt(txt_Count.getText())+1 + "");
+				
+				
 			}
 		});
 		
@@ -251,9 +259,31 @@ public class FacilityInformation {
 				btn_Minus.setIcon(new ImageIcon(list[5]));
 
 			}
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				////
+				txt_Count.setText((Integer.parseInt(txt_Count.getText())-1) + "");
+			}
 		});
 		btn_Minus.setBounds(522, 174, 27, 33);
 		panel.add(btn_Minus);
+		lbl_PhoneNumber.setText(ww.fcvo.getSum_people());
+		
+		
+		JLabel lbl_max = new JLabel("New label");
+		lbl_max.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_max.setBounds(670, 184, 57, 18);
+		panel.add(lbl_max);
+		lbl_max.setText(ww.fcvo.getSum_people());
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\07 시설상세정보.png";
 		Image image = new ImageIcon(path).getImage();

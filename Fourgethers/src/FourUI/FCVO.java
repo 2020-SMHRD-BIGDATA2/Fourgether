@@ -4,20 +4,20 @@ public class FCVO {
 	String code;
 	String name;
 	String type;
-	String max_time;
-	String sum_people;
-	String ms_sq;
-	String img_url;
-	String home_url;
-	String fee_yn;
-	String start;
-	String end;
-	String lat;
-	String lon;
-	String addr_new;
-	String ph_num;
-	String dp_name;
-	String ar_name;
+	 String max_time;
+	 String sum_people;
+	 String ms_sq;
+	 String img_url;
+	 String home_url;
+	 String fee_yn;
+	 String start;
+	 String end;
+	 String lat;
+	 String lon;
+	 String addr_new;
+	 String ph_num;
+	 String dp_name;
+	 String ar_name;
 	public FCVO(String code, String name, String type, String max_time, String sum_people, String ms_sq, String img_url,
 			String home_url, String fee_yn, String start, String end, String lat, String lon, String addr_new,
 			String ph_num, String dp_name, String ar_name) {
