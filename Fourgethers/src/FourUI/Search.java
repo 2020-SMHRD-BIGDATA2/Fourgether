@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.nio.channels.SelectionKey;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
@@ -141,6 +142,16 @@ public class Search {
 				btn_CategoriSearch.setIcon(new ImageIcon(list[5]));
 
 			}
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				// 카테고리 검색 클릭 후
+				
+				
+				
+				
+				
+			}
 		});
 		btn_CategoriSearch.addMouseListener(new MouseAdapter() {
 			@Override
@@ -191,10 +202,14 @@ public class Search {
 		cbx_facility.setToolTipText("");
 		cbx_facility.setBounds(478, 296, 142, 38);
 		panel.add(cbx_facility);
+		search_dao.create_type();
+		for (int i = 0; i < search_dao.FcType.size(); i++) {
+			cbx_facility.addItem(search_dao.FcType.get(i));
+		}
 
 		JComboBox cbx_fee = new JComboBox();
 		cbx_fee.setFont(new Font("굴림", Font.PLAIN, 15));
-		cbx_fee.setModel(new DefaultComboBoxModel(new String[] { "\uC720/\uBB34\uB8CC \uC120\uD0DD" }));
+		cbx_fee.setModel(new DefaultComboBoxModel(new String[] {"\uC720/\uBB34\uB8CC \uC120\uD0DD", "Y", "N"}));
 		cbx_fee.setToolTipText("");
 		cbx_fee.setBounds(669, 296, 142, 38);
 		panel.add(cbx_fee);

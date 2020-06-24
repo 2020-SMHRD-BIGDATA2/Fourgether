@@ -8,6 +8,7 @@ public class SearchDAO extends DAO {
 	static ArrayList<FCVO> fc_arr = new ArrayList<FCVO>();
 	static ArrayList<String> sido = new ArrayList<String>();
 	static ArrayList<String> gu = new ArrayList<String>();
+	static ArrayList<String> FcType = new ArrayList<String>();
 	//시도 데이터 생성
 	public ArrayList<String> create_sido() {
 		getConnection();
@@ -52,6 +53,29 @@ public class SearchDAO extends DAO {
 		gu = G;
 		return G;
 	}
+	
+	public ArrayList<String> create_type() {
+		getConnection();
+		ArrayList<String> type = new ArrayList<String>();
+		try {
+			String sql = "SELECT distinct * from shittype";
+
+			psmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = psmt.executeQuery();
+			while (rs.next()) {
+				type.add(rs.getString(1));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		FcType = type;
+		return type;
+	}
+	
 	
 	
 	
