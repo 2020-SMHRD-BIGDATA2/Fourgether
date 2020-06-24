@@ -24,7 +24,7 @@ public class FacilityInformation {
 	static FacilityInformationDAO ww = new FacilityInformationDAO();
 	static LoginDAO lg = new LoginDAO();
 	static UserVO uv = new UserVO();
-	
+	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 	
 	public static void main(String[] args) {
 	
@@ -50,7 +50,6 @@ public class FacilityInformation {
 	
 	
 	private void initialize() {
-		System.out.println(ww.fcvo.getName());
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -106,8 +105,8 @@ public class FacilityInformation {
 		panel.add(lbl_FacilityName);
 		
 		JLabel btn_goFacilityInfo = new JLabel("");
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\시설목록으로가기2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\시설목록으로가기1.png").getImage();
+		list[0] = new ImageIcon(path+"시설목록으로가기2.png").getImage();
+		list[1] = new ImageIcon(path+"시설목록으로가기1.png").getImage();
 
 		btn_goFacilityInfo.addMouseListener(new MouseAdapter() {
 			@Override
@@ -134,8 +133,8 @@ public class FacilityInformation {
 		panel.add(btn_goFacilityInfo);
 		
 		JLabel btn_goPay = new JLabel("");
-		list[6] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\결제창이동2.png").getImage();
-		list[7] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\결제창이동1.png").getImage();
+		list[6] = new ImageIcon(path+"결제창이동2.png").getImage();
+		list[7] = new ImageIcon(path+"결제창이동1.png").getImage();
 
 		btn_goPay.addMouseListener(new MouseAdapter() {
 			@Override
@@ -217,8 +216,8 @@ public class FacilityInformation {
 		lbl_Fee.setText(ww.fcvo.getFee_yn());
 		
 		JLabel btn_Plus = new JLabel("");
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\플러스1.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\플러스2.png").getImage();
+		list[2] = new ImageIcon(path+"플러스1.png").getImage();
+		list[3] = new ImageIcon(path+"플러스2.png").getImage();
 
 		btn_Plus.addMouseListener(new MouseAdapter() {
 			@Override
@@ -244,8 +243,8 @@ public class FacilityInformation {
 		panel.add(btn_Plus);
 		
 		JLabel btn_Minus = new JLabel("");
-		list[4] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\마이너스1.png").getImage();
-		list[5] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\마이너스2.png").getImage();
+		list[4] = new ImageIcon(path+"마이너스1.png").getImage();
+		list[5] = new ImageIcon(path+"마이너스2.png").getImage();
 
 		btn_Minus.addMouseListener(new MouseAdapter() {
 			@Override
@@ -278,15 +277,7 @@ public class FacilityInformation {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\07 시설상세정보.png";
-		Image image = new ImageIcon(path).getImage();
+		Image image = new ImageIcon(path+"시설상세정보.png").getImage();
 		panel.setLayout(null);
 
 		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));
