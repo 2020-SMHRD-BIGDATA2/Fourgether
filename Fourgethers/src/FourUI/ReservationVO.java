@@ -6,5 +6,7 @@ public class ReservationVO extends UserVO {
 		super(id, pw);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 }
