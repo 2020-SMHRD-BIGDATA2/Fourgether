@@ -16,12 +16,9 @@ public class Main {
 	Image[] list = new Image[8];
 	static String path = System.getProperty("user.dir") + "\\src\\";
 	static UserVO vo;
-	static DAO dao = new DAO();
+	static JoinDAO join_dao = new JoinDAO();
+	static LoginDAO login_dao = new LoginDAO(); 
 	public static void main(UserVO vow) {
-		vo = vow;
-		int cnt=dao.logCheck(vo);
-		System.out.println("¼º°ø !!" + cnt);
-		System.out.println(vo.getId() +" //" + vo.getPw());
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

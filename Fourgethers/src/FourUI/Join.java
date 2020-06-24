@@ -26,7 +26,7 @@ public class Join {
 	private JLabel btn_DoubleCheck;
 	Image[] list = new Image[4];
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
-	private DAO dao = new DAO();
+	private JoinDAO dao = new JoinDAO();
 
 	public static void main(String[] args) {
 		System.out.println(path);
