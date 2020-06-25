@@ -116,7 +116,7 @@ public class FacilityInformation {
 		
 		
 		JLabel lbl_FacilityName = new JLabel("");
-		lbl_FacilityName.setBounds(130, 90, 224, 30);
+		lbl_FacilityName.setBounds(129, 100, 224, 28);
 		
 		lbl_FacilityName.setText(ww.fcvo !=null ?ww.fcvo.getName():"");
 		
@@ -190,7 +190,7 @@ public class FacilityInformation {
 		
 		
 		JLabel lbl_FacilityType = new JLabel("");
-		lbl_FacilityType.setBounds(129, 131, 224, 30);
+		lbl_FacilityType.setBounds(129, 132, 224, 30);
 		panel.add(lbl_FacilityType);
 		lbl_FacilityType.setText(ww.fcvo !=null ? ww.fcvo.getType() : "");
 		
@@ -203,17 +203,17 @@ public class FacilityInformation {
 		lbl_Address.setText(ww.fcvo !=null ? ww.fcvo.getAddr_new() : "");
 		
 		JLabel lbl_Managing = new JLabel("");
-		lbl_Managing.setBounds(130, 215, 224, 30);
+		lbl_Managing.setBounds(129, 203, 224, 30);
 		panel.add(lbl_Managing);
 		lbl_Managing.setText(ww.fcvo !=null ?  ww.fcvo.getAr_name(): "");
 		
 		JLabel lbl_Department = new JLabel("");
-		lbl_Department.setBounds(130, 256, 224, 30);
+		lbl_Department.setBounds(129, 240, 224, 30);
 		panel.add(lbl_Department);
 		lbl_Department.setText(ww.fcvo !=null ? ww.fcvo.getDp_name(): "");
 		
 		JLabel lbl_Homepage = new JLabel("");
-		lbl_Homepage.setBounds(130, 304, 224, 30);
+		lbl_Homepage.setBounds(129, 276, 224, 30);
 		panel.add(lbl_Homepage);
 		lbl_Homepage.setText(ww.fcvo !=null ? ww.fcvo.getHome_url(): "");
 		
@@ -223,17 +223,13 @@ public class FacilityInformation {
 		lbl_PhoneNumber.setText(ww.fcvo !=null ? ww.fcvo.getPh_num(): "");
 		
 		JLabel lbl_AvaliableCount = new JLabel("");
-		lbl_AvaliableCount.setBounds(130, 391, 224, 24);
+		lbl_AvaliableCount.setBounds(129, 383, 224, 24);
 		panel.add(lbl_AvaliableCount);
 		lbl_AvaliableCount.setText(ww.fcvo !=null ? ww.fcvo.getSum_people(): "");
 		
-		JLabel lbl_SubFacility = new JLabel("");
-		lbl_SubFacility.setBounds(130, 435, 224, 24);
-		panel.add(lbl_SubFacility);
-		
 		
 		JLabel lbl_Fee = new JLabel("");
-		lbl_Fee.setBounds(130, 480, 224, 24);
+		lbl_Fee.setBounds(129, 421, 224, 24);
 		panel.add(lbl_Fee);
 		lbl_Fee.setText(ww.fcvo !=null ? ww.fcvo.getFee_yn(): "");
 		
@@ -311,13 +307,13 @@ public class FacilityInformation {
 		});
 		
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"\uC6D4 \uC120\uD0DD", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
-		comboBox_1.setBounds(0, 0, 100, 21);
+		comboBox_1.setBounds(431,126,100,21);
 		panel.add(comboBox_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"\uC77C \uC120\uD0DD", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
 		
-		comboBox_2.setBounds(100, 0, 100, 21);
+		comboBox_2.setBounds(556,126,100,21);
 		comboBox_2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				String selection = (String) comboBox_1.getSelectedItem();
@@ -334,7 +330,7 @@ public class FacilityInformation {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"}));
-		comboBox.setBounds(200, 0, 100, 21);
+		comboBox.setBounds(684,126,100,21);
 		
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {

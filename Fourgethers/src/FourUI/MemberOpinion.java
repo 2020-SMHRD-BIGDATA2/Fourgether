@@ -1,4 +1,5 @@
 package FourUI;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -22,9 +23,16 @@ public class MemberOpinion {
 	private JFrame frame;
 	private JTextField txt_Opinoin;
 	Image[] list = new Image[2];
-	private int result = 1;
-
+	private int result_clean;
+	private int result_acces;
+	private int result_fc;
+	OpinionDAO opDao = new OpinionDAO();
 	
+	
+	JSlider[] slider = new JSlider[3];
+
+	static String path = System.getProperty("user.dir") + "\\src\\";
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,12 +46,10 @@ public class MemberOpinion {
 		});
 	}
 
-	
 	public MemberOpinion() {
 		initialize();
 	}
 
-	
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -55,23 +61,23 @@ public class MemberOpinion {
 
 		panel.setBounds(0, 0, 875, 513);
 		frame.getContentPane().add(panel);
-		
+
 		txt_Opinoin = new JTextField();
 		txt_Opinoin.setBounds(72, 337, 728, 86);
 		panel.add(txt_Opinoin);
 		txt_Opinoin.setColumns(10);
 		txt_Opinoin.setOpaque(false);
 		txt_Opinoin.setBorder(null);
-		
+
 		JLabel btn_OpinionSubmit = new JLabel("");
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\평가완료2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\평가완료1.png").getImage();
+		list[0] = new ImageIcon(path + "image\\평가완료2.png").getImage();
+		list[1] = new ImageIcon(path + "image\\평가완료1.png").getImage();
 
 		btn_OpinionSubmit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btn_OpinionSubmit.setIcon(new ImageIcon(list[0]));
-
+				
 			}
 
 			@Override
@@ -79,24 +85,41 @@ public class MemberOpinion {
 				btn_OpinionSubmit.setIcon(new ImageIcon(list[1]));
 
 			}
+
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "평가해주셔서 감사합니다!","평가성공", JOptionPane.INFORMATION_MESSAGE);
-				frame.dispose();  
-				ReservationHistory.main(null);
 				
+				int cnt = opDao.opinion();
+				
+				if (cnt>0) {
+					JOptionPane.showMessageDialog(null, "평가해주셔서 감사합니다!", "평가성공", JOptionPane.INFORMATION_MESSAGE);
+					frame.dispose();
+					ReservationHistory.main(null);
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "다시평가해주세요", "평가실패", JOptionPane.INFORMATION_MESSAGE);
+					frame.dispose();
+					MemberOpinion.main(null);
+					
+				}
+				
+				
+
 			}
 		});
-		
+
 		btn_OpinionSubmit.setBounds(371, 446, 162, 46);
 		panel.add(btn_OpinionSubmit);
-		
-		
+
 		JSlider slider_accessibility = new JSlider();
 		slider_accessibility.addChangeListener(new ChangeListener() {
-			
+
 			public void stateChanged(ChangeEvent e) {
-				System.out.println(result);
+				result_acces = slider_accessibility.getValue();
+				
+				
+				
+				
 			}
 		});
 		slider_accessibility.setMinimum(1);
@@ -109,15 +132,15 @@ public class MemberOpinion {
 		slider_accessibility.setBackground(Color.WHITE);
 		slider_accessibility.setBounds(246, 187, 437, 37);
 		panel.add(slider_accessibility);
-		
-		
-		
+
 		JSlider slider_clean = new JSlider();
 		slider_clean.setPaintLabels(true);
-		result = slider_clean.getValue();
+
 		slider_clean.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				System.out.println(result);
+				result_clean = slider_clean.getValue();
+			
+			
 			}
 		});
 		slider_clean.setValue(3);
@@ -129,11 +152,14 @@ public class MemberOpinion {
 		slider_clean.setBackground(Color.WHITE);
 		slider_clean.setBounds(246, 113, 437, 37);
 		panel.add(slider_clean);
-		
+
 		JSlider slider_facilityCheck = new JSlider();
 		slider_facilityCheck.addChangeListener(new ChangeListener() {
+			
 			public void stateChanged(ChangeEvent e) {
-				System.out.println(result);
+				result_fc = slider_facilityCheck.getValue();
+				
+				
 			}
 		});
 		slider_facilityCheck.setValue(3);
@@ -147,7 +173,10 @@ public class MemberOpinion {
 		slider_facilityCheck.setBounds(246, 256, 437, 37);
 		panel.add(slider_facilityCheck);
 		
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\10 시설평가.png";
+		
+		
+
+		String path = "image\\10 시설평가.png";
 		Image image = new ImageIcon(path).getImage();
 		panel.setLayout(null);
 

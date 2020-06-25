@@ -111,7 +111,7 @@ public class SearchResult {
 				}
 			});
 
-			btn_goSearch.setBounds(721, 39, 160, 49);
+			btn_goSearch.setBounds(697, 41, 160, 49);
 			panel.add(btn_goSearch);
 ////			
 			list[4] = new ImageIcon(path + "¿ÞÂÊ2.png").getImage();
@@ -138,7 +138,7 @@ public class SearchResult {
 			txt_list_1_2 = new JLabel(arr2.getType());
 			txt_list_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_1_2.setFont(new Font("±¼¸²", Font.PLAIN, 15));
-			txt_list_1_2.setBounds(375, 243, 142, 54);
+			txt_list_1_2.setBounds(388, 243, 142, 54);
 			panel.add(txt_list_1_2);
 
 			txt_list_1_3 = new JLabel(arr2.getFee_yn());
@@ -147,7 +147,7 @@ public class SearchResult {
 			txt_list_1_3.setBounds(528, 243, 142, 54);
 			panel.add(txt_list_1_3);
 
-			txt_list_1_4 = new JLabel("Æò°¡º¸±â");
+			txt_list_1_4 = new JLabel("\uC2DC\uC124\uC0C1\uC138\uBCF4\uAE30");
 			txt_list_1_4.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_1_4.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 			txt_list_1_4.setBounds(685, 243, 130, 54);
@@ -185,7 +185,7 @@ public class SearchResult {
 			txt_list_2_2 = new JLabel(arr2.getType());
 			txt_list_2_2.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_2_2.setFont(new Font("±¼¸²", Font.PLAIN, 15));
-			txt_list_2_2.setBounds(375, 314, 142, 54);
+			txt_list_2_2.setBounds(388, 314, 142, 54);
 			panel.add(txt_list_2_2);
 
 			
@@ -199,7 +199,7 @@ public class SearchResult {
 			txt_list_2_3.setBounds(528, 314, 142, 54);
 			panel.add(txt_list_2_3);
 
-			txt_list_2_4 = new JLabel("Æò°¡º¸±â");
+			txt_list_2_4 = new JLabel("\uC2DC\uC124\uC0C1\uC138\uBCF4\uAE30");
 			txt_list_2_4.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_2_4.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 			txt_list_2_4.setBounds(685, 314, 130, 54);
@@ -235,7 +235,7 @@ public class SearchResult {
 			txt_list_3_2 = new JLabel(arr2.getType());
 			txt_list_3_2.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_3_2.setFont(new Font("±¼¸²", Font.PLAIN, 15));
-			txt_list_3_2.setBounds(375, 387, 142, 54);
+			txt_list_3_2.setBounds(388, 387, 142, 54);
 			panel.add(txt_list_3_2);
 
 			txt_list_3_3 = new JLabel(arr2.getFee_yn());
@@ -244,7 +244,7 @@ public class SearchResult {
 			txt_list_3_3.setBounds(528, 387, 142, 54);
 			panel.add(txt_list_3_3);
 
-			txt_list_3_4 = new JLabel("Æò°¡º¸±â");
+			txt_list_3_4 = new JLabel("\uC2DC\uC124\uC0C1\uC138\uBCF4\uAE30");
 			txt_list_3_4.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_3_4.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 			txt_list_3_4.setBounds(688, 387, 125, 54);
@@ -286,7 +286,7 @@ public class SearchResult {
 			txt_list_4_2 = new JLabel(arr2.getType());
 			txt_list_4_2.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_4_2.setFont(new Font("±¼¸²", Font.PLAIN, 15));
-			txt_list_4_2.setBounds(375, 467, 142, 54);
+			txt_list_4_2.setBounds(388, 467, 142, 54);
 			panel.add(txt_list_4_2);
 
 			txt_list_4_3 = new JLabel(arr2.getFee_yn());
@@ -295,7 +295,7 @@ public class SearchResult {
 			txt_list_4_3.setBounds(528, 467, 142, 54);
 			panel.add(txt_list_4_3);
 
-			txt_list_4_4 = new JLabel("Æò°¡º¸±â");
+			txt_list_4_4 = new JLabel("\uC2DC\uC124\uC0C1\uC138\uBCF4\uAE30");
 			txt_list_4_4.setHorizontalAlignment(SwingConstants.CENTER);
 			txt_list_4_4.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 			txt_list_4_4.setBounds(685, 467, 130, 54);
@@ -457,11 +457,10 @@ public class SearchResult {
 				}
 			});
 
-			Image image = new ImageIcon(path + "06 °Ë»ö°á°ú.png").getImage();
+			Image image = new ImageIcon(path + "06 °Ë»ö°á°ú.PNG").getImage();
 			panel.setLayout(null);
 
-			JLabel lbl_image = new JLabel(
-					new ImageIcon(SearchResult.class.getResource("/image/06 \uAC80\uC0C9\uACB0\uACFC.PNG")));
+			JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));
 			lbl_image.setBounds(0, 10, 875, 581);
 			panel.add(lbl_image);
 

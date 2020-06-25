@@ -126,17 +126,25 @@ public class Join {
 				int pv_num = Integer.parseInt(txt_idNumber.getText());
 				String ph_num = txt_phonenumber.getText();
 				String addr = txt_address.getText();
-
+				
+				// 
 				ResisterVO vo = new ResisterVO(id, pw, name, pv_num, ph_num, addr);
+				
 				int cnt = dao.join(vo);
 				if (cnt > 0) {
 					JOptionPane.showMessageDialog(null, "가입축하드려요!", "회원가입", JOptionPane.INFORMATION_MESSAGE);
 					frame.dispose();
 					Login.main(null);
+					
 				} else {
-					JOptionPane.showMessageDialog(null, "가입실패!", "회원가입", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "정보를 입력하세요.", "회원가입", JOptionPane.INFORMATION_MESSAGE);
+					frame.dispose();
+					Join.main(null);
 				}
-
+				
+				// 
+				
+				
 			}
 		});
 

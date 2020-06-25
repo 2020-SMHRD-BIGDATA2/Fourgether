@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 public class JoinDAO extends DAO{
 	
+	
 	public int join(ResisterVO vo) {
 		int cnt = 0;
 
@@ -56,5 +57,10 @@ public class JoinDAO extends DAO{
 		return cnt;
 
 	}
+	
+	// 칸이 비어있으면 더 입력해달라고 출력
+	
+	
+
 
 }

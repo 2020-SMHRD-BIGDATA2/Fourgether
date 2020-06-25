@@ -133,11 +133,11 @@ public class MemberInformation {
 		
 		lbl_Level = new JLabel("");
 		// 등급 라벨 3 - 브론즈 / 2 - 실버 / 1 - 골드  횟수에따라 보여주는 이미지 다름
-		medal[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal3.png").getImage();
-		medal[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal2.png").getImage();
-		medal[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal1.png").getImage();
+		medal[1] = new ImageIcon(path+"image\\medal3.png").getImage();
+		medal[2] = new ImageIcon(path+"image\\medal2.png").getImage();
+		medal[3] = new ImageIcon(path+"image\\medal1.png").getImage();
 		
-		int cnt = (int) Medal_dao.medal(5);  // dao.medal(count)   >> count - 월 별 이용 횟수
+		int cnt = (int) Medal_dao.medal(3);  // dao.medal(count)   >> count - 월 별 이용 횟수
 		Image image1 = medal[cnt];   
 		
 		lbl_Level = new JLabel(new ImageIcon(image1.getScaledInstance(45, 45, Image.SCALE_SMOOTH)));

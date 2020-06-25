@@ -1,23 +1,30 @@
 package FourUI;
 
 public class FCVO {
-	String code;
-	String name;
-	String type;
-	 String max_time;
-	 String sum_people;
-	 String ms_sq;
-	 String img_url;
-	 String home_url;
-	 String fee_yn;
-	 String start;
-	 String end;
-	 String lat;
-	 String lon;
-	 String addr_new;
-	 String ph_num;
-	 String dp_name;
-	 String ar_name;
+	static String code;
+	static String name;
+	static String type;
+	static String  max_time;
+	static String  sum_people;
+	 static String ms_sq;
+	 static String img_url;
+	 static String home_url;
+	 static String fee_yn;
+	 static String start;
+	 static String end;
+	 static String lat;
+	 static String lon;
+	 static String addr_new;
+	 static String ph_num;
+	 static String dp_name;
+	 static String ar_name;
+	 
+	 public FCVO() {
+		 
+	 }
+	 
+	 
+	 
 	public FCVO(String code, String name, String type, String max_time, String sum_people, String ms_sq, String img_url,
 			String home_url, String fee_yn, String start, String end, String lat, String lon, String addr_new,
 			String ph_num, String dp_name, String ar_name) {

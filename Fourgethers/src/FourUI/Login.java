@@ -1,4 +1,6 @@
 package FourUI;
+
+
 import java.awt.EventQueue;
 import java.awt.Image;
 
@@ -18,19 +20,15 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
-import javax.swing.Icon;
 
 public class Login {
 
 	private JFrame frame;
 	private JTextField txt_id;
 	private JPasswordField txt_pw;
-	DAO dao2 = new DAO();
-	LoginDAO dao = new LoginDAO();
 	Image[] list = new Image[6];
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
-	
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -59,7 +57,7 @@ public class Login {
 		panel.setBounds(0, 0, 875, 513);
 		frame.getContentPane().add(panel);
 
-		Image image = new ImageIcon(path+"01-1 로그인.png").getImage();
+		Image image = new ImageIcon(path + "01 로그인.png").getImage();
 		panel.setLayout(null);
 
 		txt_id = new JTextField();
@@ -79,8 +77,8 @@ public class Login {
 
 		JLabel btn_Join = new JLabel(" ");
 		btn_Join.setHorizontalAlignment(SwingConstants.CENTER);
-		list[2] = new ImageIcon(path+"회원가입2.png").getImage();
-		list[3] = new ImageIcon(path+"회원가입.png").getImage();
+		list[2] = new ImageIcon(path + "회원가입2.png").getImage();
+		list[3] = new ImageIcon(path + "회원가입.png").getImage();
 
 		btn_Join.addMouseListener(new MouseAdapter() {
 			@Override
@@ -104,12 +102,11 @@ public class Login {
 		});
 		btn_Join.setBounds(235, 444, 166, 59);
 		panel.add(btn_Join);
-		
 
 		JLabel btn_nonMember = new JLabel(" ");
 		btn_nonMember.setHorizontalAlignment(SwingConstants.CENTER);
-		list[4] = new ImageIcon(path+"비회원로그인버튼2.png").getImage();
-		list[5] = new ImageIcon(path+"비회원로그인버튼.png").getImage();
+		list[4] = new ImageIcon(path + "비회원로그인버튼2.png").getImage();
+		list[5] = new ImageIcon(path + "비회원로그인버튼.png").getImage();
 
 		btn_nonMember.addMouseListener(new MouseAdapter() {
 			@Override
@@ -133,22 +130,17 @@ public class Login {
 		});
 		btn_nonMember.setBounds(477, 453, 159, 45);
 		panel.add(btn_nonMember);
-		
-		JLabel lbl_image = new JLabel("");
-		
+
+		JLabel lbl_image = new JLabel(new ImageIcon(Login.class.getResource("/image/01 \uB85C\uADF8\uC778.PNG")));
 		lbl_image.setBounds(0, 0, 875, 513);
 		lbl_image.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-
-			}
 
 		});
 
 		JLabel btn_login = new JLabel(" ");
-		
-		list[0] = new ImageIcon(path+"btn_Entered.png").getImage();
-		list[1] = new ImageIcon(path+"btn_Exited.png").getImage();
+
+		list[0] = new ImageIcon(path + "btn_Entered.png").getImage();
+		list[1] = new ImageIcon(path + "btn_Exited.png").getImage();
 
 		btn_login.addMouseListener(new MouseAdapter() {
 			@Override
@@ -162,13 +154,13 @@ public class Login {
 				btn_login.setIcon(new ImageIcon(list[1]));
 
 			}
-	
-			public void mouseClicked(MouseEvent e) {
-				
+
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 				String id = txt_id.getText();
 				String pw = txt_pw.getText();
+				LoginDAO dao = new LoginDAO();
 				LoginVO vo = new LoginVO(id, pw);
-				
 				int cnt = dao.logCheck(vo);
 				if (cnt >0) {
 					JOptionPane.showMessageDialog(null, "환영해요!", "로그인성공", JOptionPane.INFORMATION_MESSAGE);
@@ -176,15 +168,13 @@ public class Login {
 					Main.main(null);
 				}else {
 					JOptionPane.showMessageDialog(null, "아이디,비밀번호를 확인하세요.", "로그인실패", JOptionPane.INFORMATION_MESSAGE);
-				}
-			}
-
-			
-
-			
-
-		});
 		
+				}
+				
+				
+			}
+		});
+
 		btn_login.setBounds(409, 328, 85, 84);
 		panel.add(btn_login);
 		panel.add(lbl_image);
