@@ -23,12 +23,18 @@ import java.awt.event.ItemEvent;
 
 public class Search {
 	JComboBox cbx_sigungu;
+	JComboBox cbx_sido;
+	JComboBox cbx_facility;
+	JComboBox cbx_fee;
 	private JFrame frame;
 	private JTextField txt_Search;
 	Image[] list = new Image[6];
 	SearchDAO search_dao = new SearchDAO();
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
-
+	static String sido;
+	static String sigungu;
+	static String fctype;
+	static String fee;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,7 +53,7 @@ public class Search {
 	}
 
 	private void initialize() {
-		
+
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 899, 552);
@@ -93,7 +99,7 @@ public class Search {
 				search_dao.print(result);
 				frame.dispose();
 				SearchResult.main(null);
-				
+
 			}
 		});
 
@@ -145,9 +151,9 @@ public class Search {
 			}
 
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-
-				// 카테고리 검색 후
+			public void mouseClicked(MouseEvent e) {
+				search_dao.key_search(sido, sigungu, fctype, fee);
+				// 카테고리 검색 후 
 
 			}
 		});
@@ -161,13 +167,13 @@ public class Search {
 		btn_CategoriSearch.setBounds(403, 465, 90, 38);
 		panel.add(btn_CategoriSearch);
 
-		JComboBox cbx_sido = new JComboBox();
+		cbx_sido = new JComboBox();
 		cbx_sido.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
-				String selection = (String) cbx_sido.getSelectedItem();
-				System.out.println("Selected: " + selection);
+				sido = (String) cbx_sido.getSelectedItem();
+				System.out.println("Selected: " + sido);
 				cbx_sigungu.removeAllItems();
-				search_dao.create_gu(selection);
+				search_dao.create_gu(sido);
 				for (int i = 0; i < search_dao.gu.size(); i++) {
 					cbx_sigungu.addItem(search_dao.gu.get(i));
 				}
@@ -182,19 +188,36 @@ public class Search {
 		panel.add(cbx_sido);
 		cbx_sido.setBorder(null);
 		cbx_sido.setOpaque(false);
+		cbx_sido.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				sido = (String) cbx_sido.getSelectedItem();
+				System.out.println("Selected: " + sido);
+			}
+		});
+		
+		
 		search_dao.create_sido();
 		for (int i = 0; i < search_dao.sido.size(); i++) {
 			cbx_sido.addItem(search_dao.sido.get(i));
 		}
 
 		cbx_sigungu = new JComboBox();
+		cbx_sigungu.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				sigungu = (String) cbx_sigungu.getSelectedItem();
+				System.out.println("Selected: " + sigungu);
+			}
+		});
+		
+		
 		cbx_sigungu.setModel(new DefaultComboBoxModel(new String[] { "\uC2DC,\uAD70,\uAD6C \uC120\uD0DD" }));
 		cbx_sigungu.setFont(new Font("굴림", Font.PLAIN, 15));
 		cbx_sigungu.setToolTipText("");
 		cbx_sigungu.setBounds(284, 296, 142, 38);
 		panel.add(cbx_sigungu);
 
-		JComboBox cbx_facility = new JComboBox();
+		cbx_facility = new JComboBox();
+		
 		cbx_facility.setFont(new Font("굴림", Font.PLAIN, 15));
 		cbx_facility.setModel(new DefaultComboBoxModel(new String[] { "\uC2DC\uC124\uC720\uD615 \uC120\uD0DD" }));
 		cbx_facility.setToolTipText("");
@@ -204,14 +227,32 @@ public class Search {
 		for (int i = 0; i < search_dao.FcType.size(); i++) {
 			cbx_facility.addItem(search_dao.FcType.get(i));
 		}
+		
+		cbx_facility.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				fctype = (String) cbx_facility.getSelectedItem();
+				System.out.println("Selected: " + fctype);
+			}
+		});
 
-		JComboBox cbx_fee = new JComboBox();
+		cbx_fee = new JComboBox();
+		
 		cbx_fee.setFont(new Font("굴림", Font.PLAIN, 15));
 		cbx_fee.setModel(new DefaultComboBoxModel(new String[] { "\uC720/\uBB34\uB8CC \uC120\uD0DD", "Y", "N" }));
 		cbx_fee.setToolTipText("");
 		cbx_fee.setBounds(669, 296, 142, 38);
 		panel.add(cbx_fee);
-
+		cbx_fee.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				fee = (String) cbx_fee.getSelectedItem();
+				System.out.println("Selected: " + fee);
+			}
+		});
+		
+		
+		
+		
+		
 		Image image = new ImageIcon(path + "05 검색.png").getImage();
 		panel.setLayout(null);
 

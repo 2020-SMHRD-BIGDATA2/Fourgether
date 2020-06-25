@@ -7,7 +7,7 @@ public class UserVO {
 	static int pv_num;
 	static String ph_num;
 	static String addr;
-	static int cnt = 100;
+	static int cnt = 0;
 	static String path = System.getProperty("user.dir") + "\\src\\";
 
 	public void logOut() {

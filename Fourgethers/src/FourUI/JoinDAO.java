@@ -10,14 +10,15 @@ public class JoinDAO extends DAO{
 		getConnection();
 
 		try {
-			String sql = "INSERT INTO USERS VALUES(?,?,?,?,?,?)";
+			String sql = "INSERT INTO USERS VALUES(?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getId());
 			psmt.setString(2, vo.getPw());
 			psmt.setString(3, vo.getName());
-			psmt.setInt(4, vo.getPv_num());
-			psmt.setString(5, vo.getPh_num());
-			psmt.setString(6, vo.getAddr());
+			psmt.setInt(4, vo.cnt);
+			psmt.setInt(5, vo.getPv_num());
+			psmt.setString(6, vo.getPh_num());
+			psmt.setString(7, vo.getAddr());
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 

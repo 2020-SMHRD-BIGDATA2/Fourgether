@@ -144,9 +144,17 @@ public class SearchDAO extends DAO {
 		getConnection();
 
 		try {
-			String sql = "SELECT * from FC where name LIKE ?";
+			String sql = "";
+			if(yn.equals("Y")) {
+				sql = "SELECT * from FC where addr_new LIKE ? AND addr_new LIKE ? AND type LIKE ? AND fee_yn != '0'";
+			}else {
+				sql = "SELECT * from FC where addr_new LIKE ? AND addr_new LIKE ? AND type LIKE ? AND fee_yn = '0'";
+			}
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "%" + sido + "%");
+			psmt.setString(2, "%" + gu + "%");
+			psmt.setString(3, "%" + type + "%");
+			
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				String code = rs.getString(1);
