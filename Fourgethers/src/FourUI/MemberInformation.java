@@ -28,7 +28,7 @@ public class MemberInformation {
 	Image[] medal = new Image[4];
 	MedalDAO Medal_dao = new MedalDAO();
 	
-	static String path = System.getProperty("user.dir") + "\\src\\";
+	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -61,8 +61,8 @@ public class MemberInformation {
 		frame.getContentPane().add(panel);
 
 		JLabel btn_login = new JLabel("");
-		list[0] = new ImageIcon(path+"image\\수정확인2.png").getImage();
-		list[1] = new ImageIcon(path+"image\\수정확인1.png").getImage();
+		list[0] = new ImageIcon(path+"수정확인2.png").getImage();
+		list[1] = new ImageIcon(path+"수정확인1.png").getImage();
 
 		btn_login.addMouseListener(new MouseAdapter() {
 			@Override
@@ -133,9 +133,9 @@ public class MemberInformation {
 		
 		lbl_Level = new JLabel("");
 		// 등급 라벨 3 - 브론즈 / 2 - 실버 / 1 - 골드  횟수에따라 보여주는 이미지 다름
-		medal[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal3.png").getImage();
-		medal[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal2.png").getImage();
-		medal[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\medal1.png").getImage();
+		medal[1] = new ImageIcon(path+"medal3.png").getImage();
+		medal[2] = new ImageIcon(path+"medal2.png").getImage();
+		medal[3] = new ImageIcon(path+"medal1.png").getImage();
 		
 		int cnt = (int) Medal_dao.medal(5);  // dao.medal(count)   >> count - 월 별 이용 횟수
 		Image image1 = medal[cnt];   
@@ -150,8 +150,8 @@ public class MemberInformation {
 		lbl_Level.setBounds(507, 79, 57, 45);
 		panel.add(lbl_Level);
 		
-		String path = "image\\04 회원정보.png";
-		Image image = new ImageIcon(path).getImage();
+		
+		Image image = new ImageIcon(path+"04 회원정보.png").getImage();
 		panel.setLayout(null);
 
 		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 542, Image.SCALE_SMOOTH)));
