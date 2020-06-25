@@ -20,6 +20,11 @@ public class EndResVO extends FCVO{
 		this.fc_code = fc_code;
 		this.user_id = user_id;
 	}
+	
+	public void Fc_get() {
+		
+	}
+	
 	public EndResVO() {
 		
 	}

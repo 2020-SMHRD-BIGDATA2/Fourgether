@@ -19,9 +19,11 @@ public class ReservationHistory {
 	private JFrame frame;
 	Image[] list = new Image[14];
 	EndResVO[] arr_t = new EndResVO[2];
-	EndResVO vo = new EndResVO();
+	EndResVO endresvo = new EndResVO();
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
-
+	ReservationDAO dao = new ReservationDAO();
+	
+	
 
 
 	
@@ -46,13 +48,14 @@ public class ReservationHistory {
 	
 	private void initialize() {
 		java.util.Iterator<EndResVO> iter;
-		ReservationDAO dao = new ReservationDAO();
+		
 		dao.getEndResAll();
 		ArrayList<EndResVO> arr = dao.arr;
 		iter = arr.iterator();
 		EndResVO empty = new EndResVO();
 		dao.print();
-		
+		dao.get_fc();
+		System.out.println(FCVO.fc_name);
 		
 		
 		
@@ -312,16 +315,16 @@ public class ReservationHistory {
 		
 		
 		if (iter.hasNext() == true) {
-			vo = iter.next();
-			arr_t[0] = vo;
+			endresvo = iter.next();
+			arr_t[0] = endresvo;
 		} else {
-			vo = empty;
-			arr_t[0] = vo;
+			endresvo = empty;
+			arr_t[0] = endresvo;
 		}
 		
 		
 		
-		JLabel lbl_3_1 = new JLabel(i+"");
+		JLabel lbl_3_1 = new JLabel(i++ +"");
 		lbl_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_1.setBounds(39, 288, 124, 18);
 		panel.add(lbl_3_1);
@@ -329,17 +332,17 @@ public class ReservationHistory {
 		
 		
 		
-		JLabel lbl_3_2 = new JLabel(vo.fc_name);
+		JLabel lbl_3_2 = new JLabel(endresvo.fc_name);
 		lbl_3_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_2.setBounds(192, 288, 128, 18);
 		panel.add(lbl_3_2);
 		
-		JLabel lbl_3_3 = new JLabel(vo.month);
+		JLabel lbl_3_3 = new JLabel(endresvo.month);
 		lbl_3_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_3.setBounds(371, 288, 107, 18);
 		panel.add(lbl_3_3);
 		
-		JLabel lbl_3_4 = new JLabel(vo.day_num);
+		JLabel lbl_3_4 = new JLabel(endresvo.day_num);
 		lbl_3_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_4.setBounds(539, 288, 107, 18);
 		panel.add(lbl_3_4);
@@ -361,11 +364,11 @@ public class ReservationHistory {
 		
 
 		if (iter.hasNext() == true) {
-			vo = iter.next();
-			arr_t[0] = vo;
+			endresvo = iter.next();
+			arr_t[0] = endresvo;
 		} else {
-			vo = empty;
-			arr_t[0] = vo;
+			endresvo = empty;
+			arr_t[0] = endresvo;
 		}
 		
 		
@@ -373,22 +376,23 @@ public class ReservationHistory {
 		
 		
 		
-		JLabel lbl_4_1 = new JLabel("");
+		JLabel lbl_4_1 = new JLabel(i++ + "");
 		lbl_4_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_4_1.setBounds(39, 320, 124, 18);
 		panel.add(lbl_4_1);
 		
-		JLabel lbl_4_2 = new JLabel("");
+		
+		JLabel lbl_4_2 = new JLabel(endresvo.fc_name);
 		lbl_4_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_4_2.setBounds(192, 316, 128, 22);
 		panel.add(lbl_4_2);
 		
-		JLabel lbl_4_3 = new JLabel("");
+		JLabel lbl_4_3 = new JLabel(endresvo.month);
 		lbl_4_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_4_3.setBounds(371, 316, 107, 18);
 		panel.add(lbl_4_3);
 		
-		JLabel lbl_4_4 = new JLabel("1");
+		JLabel lbl_4_4 = new JLabel(endresvo.day_num);
 		lbl_4_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_4_4.setBounds(539, 316, 107, 18);
 		panel.add(lbl_4_4);

@@ -5,15 +5,52 @@ import java.util.ArrayList;
 
 public class ReservationDAO extends DAO {
 	// 평가하기 위해 선택된 객체
-	static EndResVO erVO = new EndResVO();
-	// 로그인된 정보 객체
-	static UserVO userVO = new UserVO();
+	static EndResVO ervo = new EndResVO();
 	// 평가하기 위해 선택된 객체의 상세 시설 정보
 	static FCVO fcvo = new FCVO();
 	// 사용 완료된 모든 객체 리스트
 	static ArrayList<EndResVO> arr = new ArrayList<EndResVO>();
-
 	
+	
+	public int get_fc() {
+		getConnection();
+		int cnt = 0;
+		String sql = "select * from fc where code = ?";
+		System.out.println("code는 "+ervo.code);
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, ervo.code);
+			rs = psmt.executeQuery();
+			cnt = 1;
+			while (rs.next()) {
+				String code = rs.getString(1);
+				String name = rs.getString(2);
+				String type1 = rs.getString(3);
+				String max_time = rs.getString(4);
+				String sum_people = rs.getString(5);
+				String ms_sq = rs.getString(6);
+				String img_url = rs.getString(7);
+				String home_url = rs.getString(8);
+				String fee_yn = rs.getString(9);
+				String start = rs.getString(10);
+				String end = rs.getString(11);
+				String lat = rs.getString(12);
+				String lon = rs.getString(13);
+				String addr_new = rs.getString(14);
+				String ph_num = rs.getString(15);
+				String dp_name = rs.getString(16);
+				String ar_name = rs.getString(17);
+				FCVO fcvo = new FCVO(code, name, type1, max_time, sum_people, ms_sq, img_url, home_url, fee_yn,
+						start, end, lat, lon, addr_new, ph_num, dp_name, ar_name);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return cnt;
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 	
 	//print arr
 	public void print() {
@@ -31,7 +68,7 @@ public class ReservationDAO extends DAO {
 		System.out.println("getEndREsAALl");
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, userVO.id);
+			psmt.setString(1, fcvo.id);
 			rs = psmt.executeQuery();
 			cnt = 1;
 			System.out.println("select 실행");
@@ -42,7 +79,6 @@ public class ReservationDAO extends DAO {
 				String week_num = rs.getString(3);
 				String day_num = rs.getString(4);
 				String day_time = rs.getString(5);
-
 				String fc_code = rs.getString(6);
 				String user_id = rs.getString(7);
 
@@ -72,13 +108,13 @@ public class ReservationDAO extends DAO {
 		try {
 			String sql = "insert into COM_RES_FC values(?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, erVO.code);
-			psmt.setString(2, erVO.month);
-			psmt.setString(3, erVO.week_num);
-			psmt.setString(4, erVO.day_num);
-			psmt.setString(5, erVO.day_time);
+			psmt.setString(1, ervo.code);
+			psmt.setString(2, ervo.month);
+			psmt.setString(3, ervo.week_num);
+			psmt.setString(4, ervo.day_num);
+			psmt.setString(5, ervo.day_time);
 			psmt.setString(6, fcvo.code);
-			psmt.setString(7, userVO.id);
+			psmt.setString(7, fcvo.id);
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {
