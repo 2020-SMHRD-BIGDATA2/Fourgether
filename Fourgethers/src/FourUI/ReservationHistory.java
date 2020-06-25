@@ -18,8 +18,10 @@ public class ReservationHistory {
 	static int i=0;
 	private JFrame frame;
 	Image[] list = new Image[14];
+
 	EndResVO[] arr_t = new EndResVO[2];
 	EndResVO endresvo = new EndResVO();
+
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 	ReservationDAO dao = new ReservationDAO();
 	
@@ -326,7 +328,7 @@ public class ReservationHistory {
 		
 		JLabel lbl_3_1 = new JLabel(i++ +"");
 		lbl_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_1.setBounds(39, 288, 124, 18);
+		lbl_3_1.setBounds(35, 288, 124, 18);
 		panel.add(lbl_3_1);
 		
 		
@@ -334,17 +336,17 @@ public class ReservationHistory {
 		
 		JLabel lbl_3_2 = new JLabel(endresvo.fc_name);
 		lbl_3_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_2.setBounds(192, 288, 128, 18);
+		lbl_3_2.setBounds(167, 288, 128, 18);
 		panel.add(lbl_3_2);
 		
 		JLabel lbl_3_3 = new JLabel(endresvo.month);
 		lbl_3_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_3.setBounds(371, 288, 107, 18);
+		lbl_3_3.setBounds(307, 288, 107, 18);
 		panel.add(lbl_3_3);
 		
 		JLabel lbl_3_4 = new JLabel(endresvo.day_num);
 		lbl_3_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_3_4.setBounds(539, 288, 107, 18);
+		lbl_3_4.setBounds(442, 288, 107, 18);
 		panel.add(lbl_3_4);
 		
 		JLabel btn_Æò°¡ = new JLabel("\uD3C9\uAC00\uD558\uAE30");
@@ -376,25 +378,28 @@ public class ReservationHistory {
 		
 		
 		
+
 		JLabel lbl_4_1 = new JLabel(i++ + "");
+
 		lbl_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_1.setBounds(39, 320, 124, 18);
+		lbl_4_1.setBounds(35, 320, 124, 18);
 		panel.add(lbl_4_1);
 		
-		
 		JLabel lbl_4_2 = new JLabel(endresvo.fc_name);
+
 		lbl_4_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_2.setBounds(192, 316, 128, 22);
+		lbl_4_2.setBounds(167, 316, 128, 22);
 		panel.add(lbl_4_2);
-		
+	
 		JLabel lbl_4_3 = new JLabel(endresvo.month);
+
 		lbl_4_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_3.setBounds(371, 316, 107, 18);
+		lbl_4_3.setBounds(307, 316, 107, 18);
 		panel.add(lbl_4_3);
 		
 		JLabel lbl_4_4 = new JLabel(endresvo.day_num);
 		lbl_4_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_4_4.setBounds(539, 316, 107, 18);
+		lbl_4_4.setBounds(442, 316, 107, 18);
 		panel.add(lbl_4_4);
 		
 		JLabel lbl_4_5 = new JLabel("\uD3C9\uAC00\uD558\uAE30");

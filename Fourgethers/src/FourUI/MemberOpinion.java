@@ -89,7 +89,7 @@ public class MemberOpinion {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-
+				int cnt = opDao.opinion();
 				
 				if (cnt>0) {
 					JOptionPane.showMessageDialog(null, "평가해주셔서 감사합니다!", "평가성공", JOptionPane.INFORMATION_MESSAGE);
