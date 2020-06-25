@@ -40,7 +40,7 @@ public class LoginDAO extends DAO {
 				vow.pv_num  = rs.getInt(5);
 				vow.ph_num  = rs.getString(6);
 				vow.addr  = rs.getString(7);
-				System.out.println(rs.getString(3) + "");
+				System.out.println(rs.getString(3));
 				System.out.println(rs.getInt(4) + " ");
 				System.out.println(rs.getString(5));
 				System.out.println(rs.getString(6));
