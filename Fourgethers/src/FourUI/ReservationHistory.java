@@ -16,7 +16,7 @@ public class ReservationHistory {
 
 	private JFrame frame;
 	Image[] list = new Image[14];
-
+	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -53,8 +53,8 @@ public class ReservationHistory {
 		
 		JLabel btn_left1 = new JLabel("");
 		btn_left1.setBounds(397, 204, 25, 26);
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\왼쪽2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\왼쪽1.png").getImage();
+		list[0] = new ImageIcon(path + "왼쪽2.png").getImage();
+		list[1] = new ImageIcon(path + "왼쪽1.png").getImage();
 
 		btn_left1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -73,8 +73,8 @@ public class ReservationHistory {
 		
 		JLabel btn_right1 = new JLabel("");
 		btn_right1.setBounds(453, 203, 25, 26);
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\오른쪽2.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\오른쪽1.png").getImage();
+		list[2] = new ImageIcon(path + "오른쪽2.png").getImage();
+		list[3] = new ImageIcon(path + "오른쪽1.png").getImage();
 
 		btn_right1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -93,8 +93,8 @@ public class ReservationHistory {
 		
 		JLabel btn_left2 = new JLabel("");
 		btn_left2.setBounds(397, 354, 25, 26);
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\왼쪽2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\왼쪽1.png").getImage();
+		list[0] = new ImageIcon(path + "왼쪽2.png").getImage();
+		list[1] = new ImageIcon(path+"왼쪽1.png").getImage();
 
 		btn_left2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -113,8 +113,8 @@ public class ReservationHistory {
 		
 		JLabel btn_right2 = new JLabel("");
 		btn_right2.setBounds(452, 351, 25, 29);
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\오른쪽2.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\오른쪽1.png").getImage();
+		list[2] = new ImageIcon(path+"오른쪽2.png").getImage();
+		list[3] = new ImageIcon(path+"오른쪽1.png").getImage();
 
 		btn_right2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -133,8 +133,8 @@ public class ReservationHistory {
 		
 		JLabel btn_left3 = new JLabel("");
 		btn_left3.setBounds(397, 483, 25, 29);
-		list[0] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\왼쪽2.png").getImage();
-		list[1] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\왼쪽1.png").getImage();
+		list[0] = new ImageIcon(path+"왼쪽2.png").getImage();
+		list[1] = new ImageIcon(path+"왼쪽1.png").getImage();
 
 		btn_left3.addMouseListener(new MouseAdapter() {
 			@Override
@@ -153,8 +153,8 @@ public class ReservationHistory {
 		
 		JLabel btn_right3 = new JLabel("");
 		btn_right3.setBounds(451, 481, 25, 29);
-		list[2] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\오른쪽2.png").getImage();
-		list[3] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\오른쪽1.png").getImage();
+		list[2] = new ImageIcon(path+"오른쪽2.png").getImage();
+		list[3] = new ImageIcon(path+"오른쪽1.png").getImage();
 
 		btn_right3.addMouseListener(new MouseAdapter() {
 			@Override
@@ -173,8 +173,8 @@ public class ReservationHistory {
 		
 		JLabel btn_goMain = new JLabel("");
 		btn_goMain.setBounds(733, 12, 134, 40);
-		list[4] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\메인으로2.png").getImage();
-		list[5] = new ImageIcon("C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\메인으로1.png").getImage();
+		list[4] = new ImageIcon(path+"메인으로2.png").getImage();
+		list[5] = new ImageIcon(path+"메인으로1.png").getImage();
 
 		btn_goMain.addMouseListener(new MouseAdapter() {
 			@Override
@@ -360,8 +360,8 @@ public class ReservationHistory {
 		lbl_6_3.setBounds(585, 451, 240, 18);
 		panel.add(lbl_6_3);
 		
-		String path = "C:\\Users\\SMHRD\\Desktop\\JAVA eclipse\\JAVA_workspace\\1차프로젝트\\src\\image\\09 예약내역.png";
-		Image image = new ImageIcon(path).getImage();
+		
+		Image image = new ImageIcon(path+"09 예약내역.png").getImage();
 		panel.setLayout(null);
 
 		JLabel lbl = new JLabel(new ImageIcon(image.getScaledInstance(881, 512, Image.SCALE_SMOOTH)));
