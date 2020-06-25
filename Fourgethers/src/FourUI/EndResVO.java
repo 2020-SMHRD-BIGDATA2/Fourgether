@@ -1,6 +1,6 @@
 package FourUI;
 
-public class EndResVO extends UserVO {
+public class EndResVO extends FCVO{
 	static String code;
 	static String month;
 	static String week_num;

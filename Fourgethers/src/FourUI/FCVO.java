@@ -1,8 +1,8 @@
 package FourUI;
 
-public class FCVO {
+public class FCVO extends UserVO{
 	static String code;
-	static String name;
+	static String fc_name;
 	static String type;
 	static String  max_time;
 	static String  sum_people;

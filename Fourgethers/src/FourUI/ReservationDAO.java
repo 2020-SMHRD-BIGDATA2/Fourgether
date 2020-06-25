@@ -13,17 +13,30 @@ public class ReservationDAO extends DAO {
 	// 사용 완료된 모든 객체 리스트
 	static ArrayList<EndResVO> arr = new ArrayList<EndResVO>();
 
+	
+	
+	//print arr
+	public void print() {
+		for(int i=0;i<arr.size();i++) {
+			System.out.println(arr.get(i).getName());
+		}
+	}
+	
+	
 	// ERVO에 값을 만드는 기능 select * from end_res_fc -> ArrayList<erVO> -> 1, 0 도출
 	public int getEndResAll() {
 		getConnection();
 		int cnt = 0;
 		String sql = "select * from end_res_fc where user_id = ?";
+		System.out.println("getEndREsAALl");
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, userVO.id);
 			rs = psmt.executeQuery();
 			cnt = 1;
+			System.out.println("select 실행");
 			while (rs.next()) {
+				System.out.println("select 실행2");
 				String code = rs.getString(1);
 				String month = rs.getString(2);
 				String week_num = rs.getString(3);

@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -12,12 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+
 public class ReservationHistory {
-	
+	static int i=0;
 	private JFrame frame;
 	Image[] list = new Image[14];
-
-	
+	EndResVO[] arr_t = new EndResVO[2];
+	EndResVO vo = new EndResVO();
 	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 
 
@@ -43,6 +45,17 @@ public class ReservationHistory {
 
 	
 	private void initialize() {
+		java.util.Iterator<EndResVO> iter;
+		ReservationDAO dao = new ReservationDAO();
+		dao.getEndResAll();
+		ArrayList<EndResVO> arr = dao.arr;
+		iter = arr.iterator();
+		EndResVO empty = new EndResVO();
+		dao.print();
+		
+		
+		
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 886, 552);
@@ -296,22 +309,37 @@ public class ReservationHistory {
 		btn_2_useDone.setBounds(744, 157, 79, 35);
 		panel.add(btn_2_useDone);
 		
-		JLabel lbl_3_1 = new JLabel("");
+		
+		
+		if (iter.hasNext() == true) {
+			vo = iter.next();
+			arr_t[0] = vo;
+		} else {
+			vo = empty;
+			arr_t[0] = vo;
+		}
+		
+		
+		
+		JLabel lbl_3_1 = new JLabel(i+"");
 		lbl_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_1.setBounds(39, 288, 124, 18);
 		panel.add(lbl_3_1);
 		
-		JLabel lbl_3_2 = new JLabel("");
+		
+		
+		
+		JLabel lbl_3_2 = new JLabel(vo.fc_name);
 		lbl_3_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_2.setBounds(192, 288, 128, 18);
 		panel.add(lbl_3_2);
 		
-		JLabel lbl_3_3 = new JLabel("");
+		JLabel lbl_3_3 = new JLabel(vo.month);
 		lbl_3_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_3.setBounds(371, 288, 107, 18);
 		panel.add(lbl_3_3);
 		
-		JLabel lbl_3_4 = new JLabel("");
+		JLabel lbl_3_4 = new JLabel(vo.day_num);
 		lbl_3_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_3_4.setBounds(539, 288, 107, 18);
 		panel.add(lbl_3_4);
@@ -319,7 +347,8 @@ public class ReservationHistory {
 		JLabel btn_평가 = new JLabel("\uD3C9\uAC00\uD558\uAE30");
 		btn_평가.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			public void mouseClicked(MouseEvent e) {
+				
 				frame.dispose();  
 				MemberOpinion.main(null);
 			}
@@ -328,6 +357,21 @@ public class ReservationHistory {
 		btn_평가.setHorizontalAlignment(SwingConstants.CENTER);
 		btn_평가.setBounds(698, 288, 107, 18);
 		panel.add(btn_평가);
+		
+		
+
+		if (iter.hasNext() == true) {
+			vo = iter.next();
+			arr_t[0] = vo;
+		} else {
+			vo = empty;
+			arr_t[0] = vo;
+		}
+		
+		
+
+		
+		
 		
 		JLabel lbl_4_1 = new JLabel("");
 		lbl_4_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -344,7 +388,7 @@ public class ReservationHistory {
 		lbl_4_3.setBounds(371, 316, 107, 18);
 		panel.add(lbl_4_3);
 		
-		JLabel lbl_4_4 = new JLabel("");
+		JLabel lbl_4_4 = new JLabel("1");
 		lbl_4_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_4_4.setBounds(539, 316, 107, 18);
 		panel.add(lbl_4_4);
