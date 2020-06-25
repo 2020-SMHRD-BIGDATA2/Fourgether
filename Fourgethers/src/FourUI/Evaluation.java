@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 public class Evaluation {
 
 	private JFrame frame;
-
+	static String path = System.getProperty("user.dir") + "\\src\\image\\";
 	/**
 	 * Launch the application.
 	 */

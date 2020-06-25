@@ -162,17 +162,23 @@ public class Login {
 				LoginDAO dao = new LoginDAO();
 				LoginVO vo = new LoginVO(id, pw);
 				int cnt = dao.logCheck(vo);
-				if (cnt >0) {
+				if (cnt > 0) {
 					JOptionPane.showMessageDialog(null, "환영해요!", "로그인성공", JOptionPane.INFORMATION_MESSAGE);
 					frame.dispose();
 					Main.main(null);
-				}else {
+				} else {
 					JOptionPane.showMessageDialog(null, "아이디,비밀번호를 확인하세요.", "로그인실패", JOptionPane.INFORMATION_MESSAGE);
+
 		
 				}
 				
 				
-			}
+
+
+				}
+
+
+			
 		});
 
 		btn_login.setBounds(409, 328, 85, 84);

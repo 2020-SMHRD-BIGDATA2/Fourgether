@@ -176,8 +176,7 @@ public class MemberOpinion {
 		
 		
 
-		String path = "image\\10 시설평가.png";
-		Image image = new ImageIcon(path).getImage();
+		Image image = new ImageIcon(path+"10 시설평가.png").getImage();
 		panel.setLayout(null);
 
 		JLabel lbl_image = new JLabel(new ImageIcon(image.getScaledInstance(881, 510, Image.SCALE_SMOOTH)));
