@@ -391,7 +391,7 @@ public class ReservationHistory {
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					fcvox = fcvo_x[0];
-					complete();
+
 				}
 			});
 			
@@ -403,7 +403,6 @@ public class ReservationHistory {
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					fcvox = fcvo_x[1];
-					complete();
 				}
 			});
 			
@@ -423,7 +422,7 @@ public class ReservationHistory {
 			lbl_1_2.addMouseListener(new MouseAdapter() {
 				
 				public void mouseClicked(MouseEvent e) {
-					
+					dao.clear();
 					JOptionPane.showMessageDialog(null, "사용완료하시겠습니까?", "사용완료", JOptionPane.INFORMATION_MESSAGE);
 				
 				}
@@ -529,6 +528,7 @@ public class ReservationHistory {
 		boolean bol = true;
 		lbl_3_1.setText(j + 1 + "");
 		lbl_3_2.setText(dao.used.get(Math.abs(j % j_size)).fc_name);
+		if(lbl_3_2.setText().equals(""))
 		lbl_3_3.setText(dao.used.get(Math.abs(j % j_size)).month);
 		lbl_3_4.setText(dao.used.get(Math.abs(j % j_size)).day_num);
 		lbl_3_5.setText(1 + "");

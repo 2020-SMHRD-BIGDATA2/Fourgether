@@ -19,6 +19,13 @@ public class ReservationDAO extends DAO {
 	}
 	
 	
+	public void clear() {
+		
+		
+		
+	}
+	
+	
 	static UserVO usvo = new UserVO();
 	public void print_reservation() {
 		ArrayList<ReservationVO> a = reservation;

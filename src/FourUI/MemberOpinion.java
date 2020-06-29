@@ -166,7 +166,7 @@ public class MemberOpinion {
 				String user_id = resdao.res.user_id;
 				System.out.println(fc_name +" " + user_id);
 				int cnt = opDao.opinion(clean, acces,cont, des, fc_name, user_id);
-				
+				opDao.count(user_id);
 				
 				if (cnt > 0) {
 					JOptionPane.showMessageDialog(null, "평가해주셔서 감사합니다!", "평가성공", JOptionPane.INFORMATION_MESSAGE);

@@ -271,8 +271,8 @@ public class FacilityInformation {
 
 	      sl_panel.putConstraint(SpringLayout.NORTH, chartpanel, 0, SpringLayout.NORTH, lbl_graph);
 	      sl_panel.putConstraint(SpringLayout.WEST, chartpanel, 0, SpringLayout.WEST, lbl_graph);
-	      sl_panel.putConstraint(SpringLayout.SOUTH, chartpanel, 425, SpringLayout.NORTH, lbl_graph);
-	      sl_panel.putConstraint(SpringLayout.EAST, chartpanel, 276, SpringLayout.WEST, lbl_graph);
+	      sl_panel.putConstraint(SpringLayout.SOUTH, chartpanel, 200, SpringLayout.NORTH, lbl_graph);
+	      sl_panel.putConstraint(SpringLayout.EAST, chartpanel, 200, SpringLayout.WEST, lbl_graph);
 	      lbl_graph.add(chartpanel);
 		
 
