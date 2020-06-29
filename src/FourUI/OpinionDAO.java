@@ -53,6 +53,26 @@ public class OpinionDAO extends LoginDAO {
 
 		return cnt;
 	}
+
+	public void count(String id) {
+		int cnt = 0;
+		getConnection();
+		System.out.println("¼º°ø");
+		try {
+			String sql = "UPDATE users SET cnt=(select cnt from users where id = ? )+1 where id= ? ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, id);
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+			
+		}
+
+	}
 	
 	
 	
